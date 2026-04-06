@@ -15,7 +15,7 @@ function Image({
 
   return (
     <div
-      className="w-full bg-gray-100 overflow-hidden rounded-md cursor-pointer"
+      className="w-full bg-gray-100 overflow-hidden rounded-md cursor-pointer transition-transform duration-200 hover:scale-[1.005]"
       style={
         aspect
           ? { paddingBottom: `${aspect * 100}%`, position: "relative" }
@@ -43,7 +43,7 @@ export default function Gallery({
 }) {
   return (
     <div>
-      <h1 className="font-bold text-2xl my-6 mx-4">{data.title}</h1>
+      <h1 className="font-bold text-xl my-4 mx-4">{data.title}</h1>
 
       {isMobile ? ( // Single column on mobile, ordered col-by-col
         <div key={data.sectionId} className="flex flex-col gap-2">
