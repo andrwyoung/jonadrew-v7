@@ -1,3 +1,5 @@
+import Galleries from "@/components/homepage/galleries";
+
 export default function Home() {
   return (
     <div className="flex flex-col flex-1 bg-background text-text">
@@ -14,6 +16,8 @@ export default function Home() {
         <p className="mt-4 max-w-md text-center text-base leading-relaxed">
           Comics, book covers, and board game art.
         </p>
+
+        <Galleries />
       </main>
     </div>
   );

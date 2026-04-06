@@ -7,11 +7,11 @@ import { Block, BlockType, CropRect } from "../types/block-types";
 import { supabase } from "../supabase/supabase-client";
 import { R2_OBJECT_URL } from "@/types/settings";
 
+// given a section id, fetch that section for us
+
 export async function fetchSupabaseBlocks(
   sectionIds: string[],
 ): Promise<Record<string, Block[]>> {
-  console.log("Fetching images from Supabase DB...");
-
   const { data: blocks, error } = await supabase
     .from("blocks")
     .select(
