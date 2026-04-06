@@ -42,7 +42,9 @@ export default function Gallery({
   onImageClick: (id: string) => void;
 }) {
   return (
-    <>
+    <div>
+      <h1 className="font-bold text-2xl my-6 mx-4">{data.title}</h1>
+
       {isMobile ? ( // Single column on mobile, ordered col-by-col
         <div key={data.sectionId} className="flex flex-col gap-2">
           {data.ordered.map((block) => (
@@ -74,6 +76,6 @@ export default function Gallery({
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 }

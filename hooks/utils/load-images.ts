@@ -90,31 +90,34 @@ function mobileOrderBlocks(blocks: Block[]): Block[] {
 
 export function useLoadImages() {
   const [sections, setSections] = useState<SectionData[]>([]);
+  const [loading, setLoading] = useState(true);
 
   // grab all the images
   useEffect(() => {
     async function loadImages() {
+      const sectionIds = PORTFOLIO_SECTIONS.map((s) => s.id);
       const [sectionCols, blocksBySectionId] = await Promise.all([
-        fetchSupabaseSections(PORTFOLIO_SECTIONS),
-        fetchSupabaseBlocks(PORTFOLIO_SECTIONS),
+        fetchSupabaseSections(sectionIds),
+        fetchSupabaseBlocks(sectionIds),
       ]);
 
-      const result: SectionData[] = PORTFOLIO_SECTIONS.map((id) => {
-        const numColumns = sectionCols[id] ?? 1;
-        const blocks = blocksBySectionId[id] ?? [];
+      const result: SectionData[] = PORTFOLIO_SECTIONS.map((section) => {
+        const numColumns = sectionCols[section.id] ?? 1;
+        const blocks = blocksBySectionId[section.id] ?? [];
         return {
-          sectionId: id,
-
+          sectionId: section.id,
+          title: section.title,
           numColumns,
           columns: buildColumns(blocks, numColumns),
           ordered: mobileOrderBlocks(blocks),
         };
       });
       setSections(result);
+      setLoading(false);
     }
 
     loadImages();
   }, []);
 
-  return sections;
+  return { sections, loading };
 }

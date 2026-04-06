@@ -12,12 +12,14 @@ const links = [
 export default function Navbar() {
   const pathname = usePathname();
   const [visible, setVisible] = useState(true);
+  const [atTop, setAtTop] = useState(true);
   const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentY = window.scrollY;
       setVisible(currentY < lastScrollY.current || currentY < 10);
+      setAtTop(currentY < 10);
       lastScrollY.current = currentY;
     };
 
@@ -27,15 +29,14 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full px-8 py-3 flex items-center justify-between bg-primary z-50 transition-transform duration-300 ${
+      className={`fixed top-0 left-0 w-full px-8 py-3 flex items-center justify-between z-50 transition-all duration-300 ${
         visible ? "translate-y-0" : "-translate-y-full"
-      }`}
+      } ${atTop ? "" : "backdrop-blur-md bg-white/80"}`}
     >
       <div>
         <Link
           href="/"
-          className="text-3xl text-text hover:text-primary"
-          style={{ fontFamily: "var(--font-jonadrew-logo)" }}
+          className="text-3xl text-text hover:text-primary font-logo"
         >
           Jonadrew
         </Link>

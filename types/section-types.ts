@@ -2,6 +2,7 @@ import { Block } from "./block-types";
 
 export type SectionData = {
   sectionId: string;
+  title: string;
 
   numColumns: number;
   columns: Block[][]; // columns[colIndex] = blocks sorted by row
