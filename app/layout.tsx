@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Jonadrew",
   description:
-    "Illustrations drawn by Andrew Yong. Comics, book covers and board games",
+    "Illustrations by Andrew Yong: comics, book covers and board game art",
 };
 
 const logoFont = Caveat_Brush({
