@@ -1,4 +1,4 @@
-import Galleries from "@/components/homepage/galleries";
+import Portfolio from "@/components/homepage/portfolio";
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
           Comics, book covers, and board game art.
         </p>
 
-        <Galleries />
+        <Portfolio />
       </main>
     </div>
   );
