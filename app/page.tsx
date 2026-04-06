@@ -14,7 +14,7 @@ export default function Home() {
           Illustrations by Andrew Yong
         </h2>
         <p className="mt-4 max-w-md text-center text-base leading-relaxed">
-          Comics, book covers, and board game art.
+          Cotics, book covers, and board game art.
         </p>
 
         <Portfolio />

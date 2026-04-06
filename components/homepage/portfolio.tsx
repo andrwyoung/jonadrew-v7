@@ -1,123 +1,46 @@
 "use client";
 
-import { fetchSupabaseBlocks } from "@/lib/fetch-images";
-import { fetchSupabaseSections } from "@/lib/fetch-section";
-import { mobileOrderBlocks } from "@/lib/mobile-ordering";
-import { Block } from "@/types/block-types";
-import { PORTFOLIO_SECTIONS } from "@/types/portfolio-config";
-import { useEffect, useState } from "react";
-
-type SectionData = {
-  numColumns: number;
-  columns: Block[][]; // columns[colIndex] = blocks sorted by row
-  mobileBlocks: Block[]; // single-column order for mobile
-};
-
-function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(max-width: 640px)");
-    setIsMobile(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, []);
-
-  return isMobile;
-}
-
-function buildColumns(blocks: Block[], numColumns: number): Block[][] {
-  const columns: Block[][] = Array.from({ length: numColumns }, () => []);
-  for (const block of blocks) {
-    const col = Math.min(block.saved_col_index, numColumns - 1);
-    columns[col].push(block);
-  }
-  for (const col of columns) {
-    col.sort((a, b) => a.saved_row_index - b.saved_row_index);
-  }
-  return columns;
-}
+import { useState, useCallback } from "react";
+import { useLoadImages } from "@/hooks/utils/load-images";
+import { useIsMobile } from "@/hooks/utils/use-is-mobile";
+import Gallery from "./gallery";
+import ImageOverlay from "./image-overlay";
 
 export default function Portfolio() {
-  const [sections, setSections] = useState<SectionData[]>([]);
   const isMobile = useIsMobile();
+  const sections = useLoadImages();
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  useEffect(() => {
-    async function loadImages() {
-      const [sectionCols, blocksBySectionId] = await Promise.all([
-        fetchSupabaseSections(PORTFOLIO_SECTIONS),
-        fetchSupabaseBlocks(PORTFOLIO_SECTIONS),
-      ]);
+  const allOrdered = sections.flatMap((s) => s.ordered);
 
-      const result: SectionData[] = PORTFOLIO_SECTIONS.map((id) => {
-        const numColumns = sectionCols[id] ?? 1;
-        const blocks = blocksBySectionId[id] ?? [];
-        return {
-          numColumns,
-          columns: buildColumns(blocks, numColumns),
-          mobileBlocks: mobileOrderBlocks(blocks),
-        };
-      });
-      setSections(result);
-    }
-
-    loadImages();
-  }, []);
+  const handleImageClick = useCallback(
+    (id: string) => {
+      const idx = allOrdered.findIndex((b) => b.block_id === id);
+      if (idx !== -1) setActiveIndex(idx);
+    },
+    [allOrdered],
+  );
 
   return (
     <div className="w-full flex flex-col gap-12">
-      {sections.map((section, i) =>
-        isMobile ? (
-          // Single column on mobile, ordered col-by-col
-          <div key={i} className="flex flex-col gap-2">
-            {section.mobileBlocks.map((block) => (
-              <BlockCard key={block.block_id} block={block} />
-            ))}
-          </div>
-        ) : (
-          // Multi-column grid on desktop
-          <div
-            key={i}
-            className="grid gap-2"
-            style={{
-              gridTemplateColumns: `repeat(${section.numColumns}, 1fr)`,
-            }}
-          >
-            {section.columns.map((col, colIdx) => (
-              <div key={colIdx} className="flex flex-col gap-2">
-                {col.map((block) => (
-                  <BlockCard key={block.block_id} block={block} />
-                ))}
-              </div>
-            ))}
-          </div>
-        ),
+      {sections.map((section) => (
+        <Gallery
+          key={section.sectionId}
+          isMobile={isMobile}
+          data={section}
+          onImageClick={handleImageClick}
+        />
+      ))}
+
+      {activeIndex !== null && (
+        <ImageOverlay
+          blocks={allOrdered}
+          activeIndex={activeIndex}
+          onClose={() => setActiveIndex(null)}
+          onPrev={() => setActiveIndex((i) => (i !== null ? i - 1 : null))}
+          onNext={() => setActiveIndex((i) => (i !== null ? i + 1 : null))}
+        />
       )}
-    </div>
-  );
-}
-
-function BlockCard({ block }: { block: Block }) {
-  if (!block.data) return null;
-
-  const aspect =
-    block.width && block.height ? block.height / block.width : undefined;
-
-  return (
-    <div
-      className="w-full bg-gray-100 overflow-hidden rounded-md"
-      style={
-        aspect
-          ? { paddingBottom: `${aspect * 100}%`, position: "relative" }
-          : {}
-      }
-    >
-      <img
-        src={block.data.fileName}
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover"
-      />
     </div>
   );
 }
