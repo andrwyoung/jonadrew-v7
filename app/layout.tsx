@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Caveat_Brush, Quicksand, Maven_Pro } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Jonadrew",
@@ -37,6 +38,7 @@ export default function RootLayout({
       className={`${logoFont.variable} ${headerFont.variable} ${bodyFont.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
+      <Analytics />
     </html>
   );
 }

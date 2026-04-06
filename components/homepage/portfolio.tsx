@@ -4,7 +4,7 @@ import { fetchSupabaseBlocks } from "@/lib/fetch-images";
 import { fetchSupabaseSections } from "@/lib/fetch-section";
 import { mobileOrderBlocks } from "@/lib/mobile-ordering";
 import { Block } from "@/types/block-types";
-import { BOOK_COVER_SECTION_ID } from "@/types/settings";
+import { PORTFOLIO_SECTIONS } from "@/types/portfolio-config";
 import { useEffect, useState } from "react";
 
 type SectionData = {
@@ -40,26 +40,25 @@ function buildColumns(blocks: Block[], numColumns: number): Block[][] {
 }
 
 export default function Portfolio() {
-  const [sections, setSections] = useState<Record<string, SectionData>>({});
+  const [sections, setSections] = useState<SectionData[]>([]);
   const isMobile = useIsMobile();
 
   useEffect(() => {
     async function loadImages() {
       const [sectionCols, blocksBySectionId] = await Promise.all([
-        fetchSupabaseSections([BOOK_COVER_SECTION_ID]),
-        fetchSupabaseBlocks([BOOK_COVER_SECTION_ID]),
+        fetchSupabaseSections(PORTFOLIO_SECTIONS),
+        fetchSupabaseBlocks(PORTFOLIO_SECTIONS),
       ]);
 
-      const result: Record<string, SectionData> = {};
-      for (const id of Object.keys(sectionCols)) {
-        const numColumns = sectionCols[id];
+      const result: SectionData[] = PORTFOLIO_SECTIONS.map((id) => {
+        const numColumns = sectionCols[id] ?? 1;
         const blocks = blocksBySectionId[id] ?? [];
-        result[id] = {
+        return {
           numColumns,
           columns: buildColumns(blocks, numColumns),
           mobileBlocks: mobileOrderBlocks(blocks),
         };
-      }
+      });
       setSections(result);
     }
 
@@ -68,10 +67,10 @@ export default function Portfolio() {
 
   return (
     <div className="w-full flex flex-col gap-12">
-      {Object.entries(sections).map(([sectionId, section]) =>
+      {sections.map((section, i) =>
         isMobile ? (
           // Single column on mobile, ordered col-by-col
-          <div key={sectionId} className="flex flex-col gap-2">
+          <div key={i} className="flex flex-col gap-2">
             {section.mobileBlocks.map((block) => (
               <BlockCard key={block.block_id} block={block} />
             ))}
@@ -79,7 +78,7 @@ export default function Portfolio() {
         ) : (
           // Multi-column grid on desktop
           <div
-            key={sectionId}
+            key={i}
             className="grid gap-2"
             style={{
               gridTemplateColumns: `repeat(${section.numColumns}, 1fr)`,
