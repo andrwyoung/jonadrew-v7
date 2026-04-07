@@ -1,8 +1,13 @@
 import { NewsletterForm } from "@/components/about/newsletter-form";
 import { ProfileImage } from "@/components/about/profile-image";
 import { SocialIcon } from "@/components/about/social-icon";
+import { Metadata } from "next";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+
+export const metadata: Metadata = {
+  title: "Jonadrew - About",
+};
 
 export default function About() {
   return (

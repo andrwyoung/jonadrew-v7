@@ -6,8 +6,41 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/my-footer";
 
 export const metadata: Metadata = {
-  title: "Jonadrew",
+  title: "Jonadrew - Portfolio",
   description: "Art by Andrew Yong: comics, book covers and board game art",
+
+  metadataBase: new URL("https://jonadrew.com"),
+
+  keywords: [
+    "illustrator",
+    "comic book artist",
+    "book cover illustration",
+    "board game art",
+    "Andrew Yong",
+    "Jonadrew",
+    "digital painting",
+    "middle grade artist",
+  ],
+
+  authors: [{ name: "Andrew Yong" }],
+  creator: "Andrew Yong",
+
+  openGraph: {
+    title: "Jonadrew (Andrew Yong)",
+    description: "Art by Andrew Yong: comics, book covers and board game art.",
+    url: "https://jonadrew.com",
+    siteName: "Jonadrew (Andrew Yong)",
+    images: [
+      {
+        url: "/og-image.jpg", // drop a 1200x630 image in your /public folder
+        width: 1200,
+        height: 562,
+        alt: "Crows",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 const logoFont = Caveat_Brush({
