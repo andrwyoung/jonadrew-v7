@@ -5,7 +5,7 @@ import { fireConfetti } from "@/lib/fire-confetti";
 export default function Home() {
   return (
     <div className="flex flex-col flex-1 bg-background text-text">
-      <main className="flex flex-1 flex-col items-center justify-center sm:px-8 px-4 py-24">
+      <main className="flex flex-1 flex-col items-center justify-center sm:px-8 px-4 pt-24">
         <div className="flex flex-col items-center justify-center pb-24">
           <button
             type="button"
@@ -21,6 +21,9 @@ export default function Home() {
         </div>
 
         <Portfolio />
+        <p className="mt-24 font-semibold text-slate-500">
+          Bonus: click on the word Portfolio at the top
+        </p>
       </main>
     </div>
   );
