@@ -13,7 +13,8 @@ export default function About() {
           alt="Andrew Yong"
           width={240}
           height={240}
-          className="rounded-full object-cover"
+          className="rounded-full object-cover w-[240px] h-[240px]"
+          loading="eager"
         />
 
         <h1 className="text-4xl self-start font-bold">About</h1>
@@ -21,13 +22,23 @@ export default function About() {
           Hi, I&apos;m Andrew — an illustrator working on comics, book covers,
           and board game art. <br />
           <br />
-          Check out the{" "}
+          I would love to connect! My favorite part of the week is the
+          newsletter I share every other Wednesday. In it I share all the
+          projects I&apos;m working on and all the general thoughts I have about
+          art.
+          <br />
+          <br />
+          Check out all my{" "}
           <a
             href="https://blog.jonadrew.com/profile"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="All old posts"
             className="font-semibold underline hover:text-secondary-text transition-colors"
           >
             old posts here
-          </a>
+          </a>{" "}
+          or even sign up:
         </p>
         <NewsletterForm />
 
