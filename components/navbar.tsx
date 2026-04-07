@@ -6,6 +6,8 @@ import { useEffect, useRef, useState } from "react";
 
 const links = [
   { href: "/", label: "Portfolio" },
+  // { href: "/comics", label: "Comics" },
+  // { href: "/store", label: "Store" },
   { href: "/about", label: "About" },
 ];
 
@@ -29,14 +31,14 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full px-8 py-3 flex items-center justify-between z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full px-8 py-3 flex items-center justify-between z-150 transition-all duration-300 ${
         visible ? "translate-y-0" : "-translate-y-full"
       } ${atTop ? "" : "backdrop-blur-md bg-white/80"}`}
     >
       <div>
         <Link
           href="/"
-          className="text-3xl text-text hover:text-primary font-logo"
+          className="text-3xl text-text hover:text-secondary-text font-logo transition"
         >
           Jonadrew
         </Link>
@@ -50,10 +52,10 @@ export default function Navbar() {
             <li key={href}>
               <Link
                 href={href}
-                className={`text-sm transition-colors font-semibold ${
+                className={`text-md transition-colors font-header hover:text-secondary-text ${
                   active
-                    ? "text-secondary-text underline"
-                    : "text-secondary-text hover:text-text"
+                    ? "text-text font-bold underline"
+                    : "text-text font-semibold "
                 }`}
               >
                 {label}

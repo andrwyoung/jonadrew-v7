@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { Block } from "@/types/block-types";
-import { FaAngleLeft, FaAngleRight, FaX, FaXmark } from "react-icons/fa6";
+import { FaAngleLeft, FaAngleRight, FaXmark } from "react-icons/fa6";
 
 export default function ImageOverlay({
   blocks,
@@ -33,7 +33,7 @@ export default function ImageOverlay({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-stone-900/80 "
+      className="fixed inset-0 z-200 flex items-center justify-center bg-stone-900/80 "
       onClick={onClose}
     >
       {/* Image */}

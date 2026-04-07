@@ -43,7 +43,9 @@ export default function Gallery({
 }) {
   return (
     <div>
-      <h1 className="font-bold text-xl my-4 mx-4">{data.title}</h1>
+      <h1 className="font-bold text-xl py-2 mx-4 border-b border-text/20 mb-6">
+        {data.title}
+      </h1>
 
       {isMobile ? ( // Single column on mobile, ordered col-by-col
         <div key={data.sectionId} className="flex flex-col gap-2">

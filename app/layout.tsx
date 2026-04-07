@@ -7,8 +7,7 @@ import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "Jonadrew",
-  description:
-    "Illustrations by Andrew Yong: comics, book covers and board game art",
+  description: "Art by Andrew Yong: comics, book covers and board game art",
 };
 
 const logoFont = Caveat_Brush({
