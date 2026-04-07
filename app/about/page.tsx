@@ -19,13 +19,24 @@ export default function About() {
 
         <h1 className="text-4xl self-start font-bold">About</h1>
         <p className="text-base leading-relaxed mb-2">
-          Hi, I&apos;m Andrew — an illustrator working on comics, book covers,
+          Hi, I&apos;m Andrew, an illustrator working on comics, book covers,
           and board game art. <br />
           <br />
-          I would love to connect! My favorite part of the week is the
-          newsletter I share every other Wednesday. In it I share all the
-          projects I&apos;m working on and all the general thoughts I have about
-          art.
+          I started off studying math and working as a Software Engineer, but I
+          chose to leave because I wanted to impact people&apos;s lives through
+          art. I&apos;ve since worked across dozens of book covers, hundreds of
+          comic pages, and a handful of board games, and I&apos;d love to help
+          bring your vision to life.
+          <br />
+          <br />
+          My art is approachable, but what excites me most is using it to
+          explore complex truths and tell stories that stick with you.
+          <br />
+          <br />
+          If you&apos;re curious to learn more about my journey or what I&apos;m
+          actually up to today, I&apos;ve been sharing my art and thoughts every
+          other Wednesday since the day I quit my Software job in 2022. I would
+          love to have you!
           <br />
           <br />
           Check out all my{" "}
@@ -38,7 +49,7 @@ export default function About() {
           >
             old posts here
           </a>{" "}
-          or even sign up:
+          or even sign up here:
         </p>
         <NewsletterForm />
 
