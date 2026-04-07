@@ -1,3 +1,5 @@
+"use client";
+
 export default function Footer() {
   return (
     <footer className="w-full px-8 py-6 text-center font-semibold text-sm text-slate-400 bg-background">

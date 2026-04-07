@@ -1,6 +1,6 @@
 import { NewsletterForm } from "@/components/about/newsletter-form";
+import { ProfileImage } from "@/components/about/profile-image";
 import { SocialIcon } from "@/components/about/social-icon";
-import Image from "next/image";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 
@@ -8,14 +8,7 @@ export default function About() {
   return (
     <div className="flex flex-col flex-1 bg-background text-text">
       <main className="flex flex-1 flex-col items-center justify-center gap-4 px-8 py-24 max-w-2xl mx-auto">
-        <Image
-          src="/face.jpeg"
-          alt="Andrew Yong"
-          width={240}
-          height={240}
-          className="rounded-full object-cover w-[240px] h-[240px]"
-          loading="eager"
-        />
+        <ProfileImage />
 
         <h1 className="text-4xl self-start font-bold">About</h1>
         <p className="text-base leading-relaxed mb-2">
