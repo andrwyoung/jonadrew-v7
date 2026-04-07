@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { Block } from "@/types/block-types";
 import { FaAngleLeft, FaAngleRight, FaXmark } from "react-icons/fa6";
+import { useIsMobile } from "@/hooks/utils/use-is-mobile";
 
 export default function ImageOverlay({
   blocks,
@@ -17,6 +18,7 @@ export default function ImageOverlay({
   onPrev: () => void;
   onNext: () => void;
 }) {
+  const isMobile = useIsMobile();
   const block = blocks[activeIndex];
 
   useEffect(() => {
@@ -29,7 +31,8 @@ export default function ImageOverlay({
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose, onPrev, onNext]);
 
-  if (!block?.data) return null;
+  // don't allow isMobile if we're small enough screen. a single column should be enough
+  if (isMobile || !block?.data) return null;
 
   return (
     <div

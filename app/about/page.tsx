@@ -8,7 +8,9 @@ export default function About() {
   return (
     <div className="flex flex-col flex-1 bg-background text-text">
       <main className="flex flex-1 flex-col items-center justify-center gap-4 px-8 py-24 max-w-2xl mx-auto">
-        <ProfileImage />
+        <div className="mb-4">
+          <ProfileImage />
+        </div>
 
         <h1 className="text-4xl self-start font-bold">About</h1>
         <p className="text-base leading-relaxed mb-2">
