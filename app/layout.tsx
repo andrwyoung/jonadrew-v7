@@ -3,6 +3,7 @@ import { Caveat_Brush, Quicksand, Maven_Pro } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import Navbar from "@/components/navbar";
+import Footer from "@/components/my-footer";
 
 export const metadata: Metadata = {
   title: "Jonadrew",
@@ -40,7 +41,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <Navbar />
         <div className="pt-14">{children}</div>
-        {/* <Footer /> */}
+        <Footer />
       </body>
       <Analytics />
     </html>
