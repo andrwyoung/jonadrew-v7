@@ -29,8 +29,8 @@ export default function About() {
           bring your vision to life.
           <br />
           <br />
-          My art is approachable, but what excites me most is using it to
-          explore complex truths and tell stories that stick with you.
+          I like making approachable art, but what excites me most is using it
+          to also explore complex truths and tell stories that stick with you.
           <br />
           <br />
           If you&apos;re curious to learn more about my journey or what I&apos;m
