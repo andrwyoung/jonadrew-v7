@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     siteName: "Jonadrew - Andrew Yong Art",
     images: [
       {
-        url: "/og-image.png", // ideal: 1200x630
+        url: "/og-image.jpg", // ideal: 1200x630
         width: 1480,
         height: 893,
         alt: "Andrew Yong illustration portfolio",
