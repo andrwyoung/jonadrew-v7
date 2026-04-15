@@ -7,8 +7,9 @@ import Footer from "@/components/my-footer";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
-  title: "Jonadrew - Portfolio",
-  description: "Art by Andrew Yong: comics, book covers and board game art",
+  title: "Jonadrew - Andrew Yong Art",
+  description:
+    "Art by Andrew Yong, a freelance illustrator for book covers and comics.",
 
   metadataBase: new URL("https://jonadrew.com"),
 
@@ -17,26 +18,39 @@ export const metadata: Metadata = {
     "comic book artist",
     "book cover illustration",
     "board game art",
-    "Andrew Yong",
+    "Andrew Yong art",
+    "Andrew Yong book covers",
+    "Andrew Yong illustration",
     "Jonadrew",
     "digital painting",
     "middle grade artist",
+    "middle grade book covers",
+    "fantasy book covers",
+    "children's book cover artist",
+    "YA book cover illustration",
+    "adventure book covers",
+    "sci-fi book covers",
+    "freelance book cover illustrator",
+    "comic pages",
+    "sequential art",
+    "graphic novel artist",
   ],
 
   authors: [{ name: "Andrew Yong" }],
   creator: "Andrew Yong",
 
   openGraph: {
-    title: "Jonadrew (Andrew Yong)",
-    description: "Art by Andrew Yong: comics, book covers and board game art.",
+    title: "Jonadrew - Andrew Yong Art",
+    description:
+      "Art by Andrew Yong, a freelance illustrator for book covers and comics.",
     url: "https://jonadrew.com",
-    siteName: "Jonadrew (Andrew Yong)",
+    siteName: "Jonadrew - Andrew Yong Art",
     images: [
       {
-        url: "/og-image.jpg", // drop a 1200x630 image in your /public folder
-        width: 1200,
-        height: 562,
-        alt: "Crows",
+        url: "/og-image.png", // ideal: 1200x630
+        width: 1480,
+        height: 893,
+        alt: "Andrew Yong illustration portfolio",
       },
     ],
     locale: "en_US",
