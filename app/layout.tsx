@@ -4,6 +4,7 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/my-footer";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Jonadrew - Portfolio",
@@ -73,6 +74,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <Navbar />
+        <Toaster />
         <div className="pt-14">{children}</div>
         <Footer />
       </body>

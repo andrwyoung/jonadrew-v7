@@ -1,9 +1,7 @@
 "use client";
-import { SocialIcon } from "@/components/about/social-icon";
 import Portfolio from "@/components/homepage/portfolio";
 import { fireConfetti } from "@/lib/fire-confetti";
-import { FaInstagram } from "react-icons/fa6";
-import { MdEmail } from "react-icons/md";
+import { CONTACT_EMAIL } from "@/types/settings";
 
 export default function Home() {
   return (
@@ -17,19 +15,14 @@ export default function Home() {
           >
             Portfolio
           </button>
-          <h2 className="text-xl font-semibold">Artwork by Andrew Yong</h2>
-          <div className="flex gap-4 items-center mt-2">
-            <SocialIcon
-              href="mailto:andrew@jonadrew.com"
-              title="Send email to Andrew"
-              icon={<MdEmail className="size-8" />}
-            />{" "}
-            <SocialIcon
-              href="https://www.instagram.com/jonadrew_/"
-              title="Instagram"
-              icon={<FaInstagram className="size-7" />}
-            />
-          </div>
+          <h2 className="text-xl font-semibold mt-4">Artwork by Andrew Yong</h2>
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="font-header font-semibold mt-1 underline hover:text-secondary-text transition-colors"
+          >
+            {CONTACT_EMAIL}
+          </a>
+
           {/* <p className="mt-4 max-w-md text-center text-base leading-relaxed">
           Comics, book covers, and board game art.
         </p> */}

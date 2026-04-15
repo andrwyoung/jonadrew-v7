@@ -3,13 +3,14 @@
 import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { SocialIcon } from "./about/social-icon";
+import { CONTACT_EMAIL } from "@/types/settings";
 
 export default function Footer() {
   return (
     <footer className="w-full px-8 py-6 flex flex-col items-center justify-center font-semibold text-sm text-stone-400 bg-background">
       <div className="flex gap-4 items-center mb-2">
         <SocialIcon
-          href="mailto:andrew@jonadrew.com"
+          href={`mailto:${CONTACT_EMAIL}`}
           title="Send email to Andrew"
           icon={<MdEmail className="size-6" />}
         />{" "}
