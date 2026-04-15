@@ -16,6 +16,6 @@ export const PORTFOLIO_SECTIONS: PortfolioConfig[] = [
   },
   {
     id: "503b2c81-d719-42dc-b2d8-e2c115665747",
-    title: "Digital Paintings",
+    title: "Illustration",
   },
 ];
