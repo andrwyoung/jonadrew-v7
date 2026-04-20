@@ -44,8 +44,7 @@ export default function About() {
           <br />
           Every other Wednesday since September 2022, I send out a newsletter
           sharing what I&apos;ve been making, what&apos;s been on my mind, and
-          then a couple photos from my camera roll that have no business being
-          there.
+          then a couple photos from my camera roll that I find kinda funny.
           <br />
           <br />
           Check out all my{" "}
@@ -62,7 +61,7 @@ export default function About() {
         </p>
         <NewsletterForm />
 
-        <h2 className="text-2xl font-bold mt-24">Contact</h2>
+        <h2 className="text-2xl font-bold mt-16">Contact</h2>
         <p className="text-base leading-relaxed mb-2">
           You can always reach me at{" "}
           <a
