@@ -9,6 +9,7 @@ import {
   FaTrash,
   FaXmark,
 } from "react-icons/fa6";
+import { CheckoutButton } from "@/components/store/checkout-button";
 
 function formatPrice(cents: number) {
   return `$${(cents / 100).toFixed(2)}`;
@@ -121,12 +122,7 @@ export function CartDrawer() {
                 <span>Total</span>
                 <span>{formatPrice(total)}</span>
               </div>
-              <button
-                type="button"
-                className="w-full bg-secondary text-white font-semibold py-2 rounded-lg hover:opacity-90 transition-opacity cursor-pointer"
-              >
-                Checkout
-              </button>
+              <CheckoutButton />
             </div>
           )}
         </Dialog.Content>

@@ -1,65 +1,40 @@
-import {} from "@/types/constants";
-import { createClientSudo } from "@/lib/supabase/supabase-server";
+import { stripeClient } from "@/lib/stripe-client";
 import { NextRequest, NextResponse } from "next/server";
-import {
-  STRIPE_CANCEL_PATH,
-  STRIPE_DISABLED,
-  STRIPE_IS_PROD,
-  STRIPE_PRICE_IDS,
-  STRIPE_SUCCESS_PATH,
-  StripeProduct,
-  VALID_STRIPE_PRODUCTS,
-} from "@/types/stripe-settings";
-import { stripeClient } from "@/lib/stripe/stripe-helpers";
+
+type LineItem = {
+  name: string;
+  price: number; // in cents
+  quantity: number;
+  image?: string;
+};
 
 export async function POST(req: NextRequest) {
-  if (STRIPE_DISABLED) {
-    return new NextResponse("Stripe is disabled", { status: 403 });
-  }
-
-  const supabase = await createClientSudo();
-  const {
-    data: { user },
-    error,
-  } = await supabase.auth.getUser();
-
-  if (error) {
-    throw new Error("Failed to get user");
-  }
-
-  if (!user?.id) {
-    return NextResponse.redirect(new URL("/login", req.url));
-  }
-
   const body = await req.json();
-  const productType: StripeProduct = body.product;
+  const items: LineItem[] = body.items;
 
-  if (!VALID_STRIPE_PRODUCTS.includes(productType)) {
-    return new NextResponse("Invalid product type", { status: 400 });
-  }
-
-  if (!productType) {
-    throw new Error("Failed to get product type");
+  if (!items || items.length === 0) {
+    return new NextResponse("Cart is empty", { status: 400 });
   }
 
   try {
     const session = await stripeClient.checkout.sessions.create({
       mode: "payment",
       payment_method_types: ["card"],
-      line_items: [
-        {
-          price: STRIPE_IS_PROD
-            ? STRIPE_PRICE_IDS[productType].live
-            : STRIPE_PRICE_IDS[productType].sandbox,
-          quantity: 1,
+      line_items: items.map((item) => ({
+        quantity: item.quantity,
+        price_data: {
+          currency: "usd",
+          unit_amount: item.price,
+          product_data: {
+            name: item.name,
+            ...(item.image
+              ? { images: [`${process.env.NEXT_PUBLIC_URL}${item.image}`] }
+              : {}),
+          },
         },
-      ],
-      success_url: `${req.nextUrl.origin}${STRIPE_SUCCESS_PATH}?product=${productType}`,
-      cancel_url: `${req.nextUrl.origin}${STRIPE_CANCEL_PATH}`,
-      metadata: {
-        user_id: user.id,
-        type: productType,
-      },
+      })),
+      success_url: `${req.nextUrl.origin}/store?success=1`,
+      cancel_url: `${req.nextUrl.origin}/store`,
     });
 
     return NextResponse.json({ url: session.url });
