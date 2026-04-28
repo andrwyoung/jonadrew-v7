@@ -34,9 +34,9 @@ export default async function ProductPage({
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-4">
             {/* Image */}
-            <div className="aspect-square bg-stone-100 rounded-lg overflow-hidden">
+            <div className="bg-stone-100 rounded-lg overflow-hidden">
               <img
-                src={product.images[0]}
+                src={product.images[product.images.length - 1]}
                 alt={product.name}
                 className="w-full h-full object-cover"
               />

@@ -8,7 +8,7 @@ export const STORE_PRODUCTS: Product[] = [
       "A hand painted illustration print of the Narrows in Zion National Park. 11x15 on 100lb matte cardstock.",
     price: 2500,
     category: "national park posters",
-    images: ["/store/test.jpg"],
+    images: ["/store/zion-mockup.jpg", "/store/zion.webp"],
   },
   {
     slug: "yellowstone-poster",
@@ -17,7 +17,7 @@ export const STORE_PRODUCTS: Product[] = [
       "A hand painted illustration print of Yellowstone National Park. 11x15 on 100lb matte cardstock.",
     price: 2500,
     category: "national park posters",
-    images: ["/store/test.jpg"],
+    images: ["/store/yellowstone-mockup.jpg", "/store/yellowstone.webp"],
   },
   {
     slug: "yosemite-poster",
@@ -26,7 +26,7 @@ export const STORE_PRODUCTS: Product[] = [
       "A hand painted illustration print of Yosemite National Park. 11x15 on 100lb matte cardstock.",
     price: 2500,
     category: "national park posters",
-    images: ["/store/test.jpg"],
+    images: ["/store/yosemite-mockup.jpg", "/store/yosemite.webp"],
   },
   {
     slug: "antelope-poster",
@@ -35,16 +35,16 @@ export const STORE_PRODUCTS: Product[] = [
       "A hand painted illustration print of Antelope Canyon Park at night. 11x15 on 100lb matte cardstock.",
     price: 2500,
     category: "national park posters",
-    images: ["/store/test.jpg"],
+    images: ["/store/antelope-mockup.jpg", "/store/antelope.webp"],
   },
   {
     slug: "banff-poster",
-    name: "Yellowstone",
+    name: "Banff",
     description:
       "A hand painted illustration print of Moraine Lake in Banff Canadian National Park. 11x15 on 100lb matte cardstock.",
     price: 2500,
     category: "national park posters",
-    images: ["/store/test.jpg"],
+    images: ["/store/banff-mockup.jpg", "/store/banff.webp"],
   },
 
   // PAINTINGS
@@ -55,7 +55,7 @@ export const STORE_PRODUCTS: Product[] = [
       "A hand painted still life of tangerines. 6x6 on 100lb matte cardstock.",
     price: 1500,
     category: "print",
-    images: ["/store/tangerine.webp"],
+    images: ["/store/tangerine-mockup.jpg", "/store/tangerine.webp"],
   },
 
   {
@@ -65,7 +65,7 @@ export const STORE_PRODUCTS: Product[] = [
       "A hand painted still life of a daisy. 6x6 on 100lb matte cardstock.",
     price: 1500,
     category: "print",
-    images: ["/store/daisy.webp"],
+    images: ["/store/daisy-mockup.jpg", "/store/daisy.webp"],
   },
   {
     slug: "honey-print",
@@ -74,7 +74,7 @@ export const STORE_PRODUCTS: Product[] = [
       "A hand painted still life of honey in a glass jar. 6x6 on 100lb matte cardstock.",
     price: 1500,
     category: "print",
-    images: ["/store/honey.webp"],
+    images: ["/store/honey-mockup.jpg", "/store/honey.webp"],
   },
   {
     slug: "orange-print",
@@ -83,7 +83,7 @@ export const STORE_PRODUCTS: Product[] = [
       "A hand painted still life of orange slices. 6x6 on 100lb matte cardstock.",
     price: 1500,
     category: "print",
-    images: ["/store/orange.webp"],
+    images: ["/store/orange-mockup.jpg", "/store/orange.webp"],
   },
 
   {
@@ -93,6 +93,6 @@ export const STORE_PRODUCTS: Product[] = [
       "A hand painted still life of an egg yolk on chopsticks. 6x6 on 100lb matte cardstock.",
     price: 1500,
     category: "print",
-    images: ["/store/yolk.webp"],
+    images: ["/store/yolk-mockup.jpg", "/store/yolk.webp"],
   },
 ];

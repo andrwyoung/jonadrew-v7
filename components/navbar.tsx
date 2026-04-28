@@ -24,7 +24,7 @@ function CartIconButton() {
       className="relative text-text hover:text-secondary-text transition-colors cursor-pointer"
       aria-label="Open cart"
     >
-      <FaCartShopping size={22} />
+      <FaCartShopping size={20} />
       {count > 0 && (
         <span className="absolute -top-1.5 -right-1.5 bg-secondary text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
           {count}

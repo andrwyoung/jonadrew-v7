@@ -123,7 +123,7 @@ export function CartDrawer() {
               </div>
               <button
                 type="button"
-                className="w-full bg-secondary text-white font-semibold py-3 rounded-lg hover:opacity-90 transition-opacity cursor-pointer"
+                className="w-full bg-secondary text-white font-semibold py-2 rounded-lg hover:opacity-90 transition-opacity cursor-pointer"
               >
                 Checkout
               </button>
