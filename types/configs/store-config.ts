@@ -2,60 +2,97 @@ import type { Product } from "../store-types";
 
 export const STORE_PRODUCTS: Product[] = [
   {
-    id: "1",
-    slug: "dragon-print",
-    name: "Dragon Print",
+    slug: "zion-poster",
+    name: "Zion",
     description:
-      "A high-quality 8x10 giclée print of the Dragon illustration. Printed on archival matte paper.",
+      "A hand painted illustration print of the Narrows in Zion National Park. 11x15 on 100lb matte cardstock.",
     price: 2500,
+    category: "national park posters",
+    images: ["/store/test.jpg"],
+  },
+  {
+    slug: "yellowstone-poster",
+    name: "Yellowstone",
+    description:
+      "A hand painted illustration print of Yellowstone National Park. 11x15 on 100lb matte cardstock.",
+    price: 2500,
+    category: "national park posters",
+    images: ["/store/test.jpg"],
+  },
+  {
+    slug: "yosemite-poster",
+    name: "Yosemite",
+    description:
+      "A hand painted illustration print of Yosemite National Park. 11x15 on 100lb matte cardstock.",
+    price: 2500,
+    category: "national park posters",
+    images: ["/store/test.jpg"],
+  },
+  {
+    slug: "antelope-poster",
+    name: "Antelope Canyon",
+    description:
+      "A hand painted illustration print of Antelope Canyon Park at night. 11x15 on 100lb matte cardstock.",
+    price: 2500,
+    category: "national park posters",
+    images: ["/store/test.jpg"],
+  },
+  {
+    slug: "banff-poster",
+    name: "Yellowstone",
+    description:
+      "A hand painted illustration print of Moraine Lake in Banff Canadian National Park. 11x15 on 100lb matte cardstock.",
+    price: 2500,
+    category: "national park posters",
+    images: ["/store/test.jpg"],
+  },
+
+  // PAINTINGS
+  {
+    slug: "tangerine-print",
+    name: "Tangerine Painting",
+    description:
+      "A hand painted still life of tangerines. 6x6 on 100lb matte cardstock.",
+    price: 1500,
     category: "print",
-    images: ["/store/dragon-print.jpg"],
-    available: true,
-    limited: 50,
+    images: ["/store/tangerine.webp"],
+  },
+
+  {
+    slug: "daisy-print",
+    name: "Daisy Painting",
+    description:
+      "A hand painted still life of a daisy. 6x6 on 100lb matte cardstock.",
+    price: 1500,
+    category: "print",
+    images: ["/store/daisy.webp"],
   },
   {
-    id: "2",
-    slug: "forest-spirit-original",
-    name: "Forest Spirit — Original",
+    slug: "honey-print",
+    name: "Honey Jar Painting",
     description:
-      "One-of-a-kind original digital painting, delivered as a high-resolution file with a certificate of authenticity.",
-    price: 15000,
-    category: "original",
-    images: ["/store/forest-spirit.jpg"],
-    available: true,
-    limited: 1,
+      "A hand painted still life of honey in a glass jar. 6x6 on 100lb matte cardstock.",
+    price: 1500,
+    category: "print",
+    images: ["/store/honey.webp"],
   },
   {
-    id: "3",
-    slug: "adventure-zine",
-    name: "Adventure Zine Vol. 1",
+    slug: "orange-print",
+    name: "Orange Painting",
     description:
-      "A hand-assembled 24-page mini zine packed with illustrations and comics. Saddle-stitched.",
-    price: 1200,
-    category: "merch",
-    images: ["/store/zine.jpg"],
-    available: true,
+      "A hand painted still life of orange slices. 6x6 on 100lb matte cardstock.",
+    price: 1500,
+    category: "print",
+    images: ["/store/orange.webp"],
   },
+
   {
-    id: "4",
-    slug: "sticker-pack",
-    name: "Character Sticker Pack",
+    slug: "yolk-print",
+    name: "Yolk Painting",
     description:
-      "Set of 6 die-cut vinyl stickers featuring characters from the portfolio. Weatherproof and vibrant.",
-    price: 800,
-    category: "merch",
-    images: ["/store/stickers.jpg"],
-    available: true,
-  },
-  {
-    id: "5",
-    slug: "comic-pages-digital",
-    name: "Comic Pages — Digital Pack",
-    description:
-      "Download a collection of 10 high-res comic pages from the archive, perfect for study or framing.",
-    price: 600,
-    category: "digital",
-    images: ["/store/comic-digital.jpg"],
-    available: true,
+      "A hand painted still life of an egg yolk on chopsticks. 6x6 on 100lb matte cardstock.",
+    price: 1500,
+    category: "print",
+    images: ["/store/yolk.webp"],
   },
 ];

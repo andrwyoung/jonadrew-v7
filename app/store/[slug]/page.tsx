@@ -27,14 +27,14 @@ export default async function ProductPage({
         <div className="w-full max-w-4xl">
           <Link
             href="/store"
-            className="text-sm text-stone-400 hover:text-secondary-text transition-colors mb-8 inline-block"
+            className=" font-semibold text-stone-400 hover:text-secondary-text transition-colors mb-8 inline-block"
           >
             ← Back to shop
           </Link>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-4">
             {/* Image */}
-            <div className="aspect-square bg-stone-100 rounded-xl overflow-hidden">
+            <div className="aspect-square bg-stone-100 rounded-lg overflow-hidden">
               <img
                 src={product.images[0]}
                 alt={product.name}
@@ -51,30 +51,14 @@ export default async function ProductPage({
               <p className="text-2xl font-semibold text-secondary-text">
                 {formatPrice(product.price)}
               </p>
-              {product.limited !== undefined && (
-                <p className="text-sm text-stone-400">
-                  Limited to {product.limited} copies
-                </p>
-              )}
+
               <p className="text-base text-stone-600 leading-relaxed">
                 {product.description}
               </p>
 
               <div className="mt-4">
-                {product.available ? (
-                  product.externalUrl ? (
-                    <a
-                      href={product.externalUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block bg-secondary text-white font-semibold px-8 py-3 rounded-lg hover:opacity-90 transition-opacity"
-                    >
-                      Buy Now
-                    </a>
-                  ) : (
-                    <AddToCartButton product={product} />
-                  )
-                ) : (
+                <AddToCartButton product={product} />
+                {product.unavailable && (
                   <span className="inline-block bg-stone-200 text-stone-400 font-semibold px-8 py-3 rounded-lg">
                     Sold Out
                   </span>

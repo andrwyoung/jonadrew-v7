@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { STORE_PRODUCTS } from "@/types/configs/store-config";
 import type { Product } from "@/types/store-types";
+import ConfettiTitle from "@/components/confetti-title";
 
 function formatPrice(cents: number) {
   return `$${(cents / 100).toFixed(2)}`;
@@ -30,13 +31,8 @@ function ProductCard({ product }: { product: Product }) {
           <span className="font-semibold text-secondary-text">
             {formatPrice(product.price)}
           </span>
-          {product.limited !== undefined && (
-            <span className="text-xs text-stone-400">
-              {product.limited} available
-            </span>
-          )}
         </div>
-        {!product.available && (
+        {product.unavailable && (
           <span className="text-xs text-red-400 font-semibold">Sold out</span>
         )}
       </div>
@@ -49,10 +45,8 @@ export default function StorePage() {
     <div className="flex flex-col flex-1 bg-background text-text">
       <main className="flex flex-1 flex-col items-center px-4 sm:px-8 pt-16 pb-24">
         <div className="flex flex-col items-center pb-12">
-          <h1 className="text-7xl font-logo mb-1">Shop</h1>
-          <p className="text-base text-stone-500 mt-2">
-            Prints, originals, and more
-          </p>
+          <ConfettiTitle text="Shop" />
+          <h2 className="text-xl font-semibold mt-4">Prints and Posters</h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl">

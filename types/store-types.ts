@@ -1,14 +1,14 @@
-export type ProductCategory = "print" | "original" | "digital" | "merch";
+export type Category = "national park posters" | "print" | "general";
 
 export type Product = {
-  id: string;
   slug: string;
+
   name: string;
   description: string;
+
   price: number; // in cents
-  category: ProductCategory;
+  category: Category;
+  unavailable?: boolean; // out of stock?
+
   images: string[]; // first image is the thumbnail
-  available: boolean;
-  limited?: number; // total copies available, omit if unlimited
-  externalUrl?: string; // e.g. Etsy, Gumroad link
 };

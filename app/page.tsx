@@ -1,6 +1,5 @@
-"use client";
+import ConfettiTitle from "@/components/confetti-title";
 import Portfolio from "@/components/homepage/portfolio";
-import { fireConfetti } from "@/lib/fire-confetti";
 import { CONTACT_EMAIL } from "@/types/settings";
 
 export default function Home() {
@@ -8,13 +7,7 @@ export default function Home() {
     <div className="flex flex-col flex-1 bg-background text-text">
       <main className="flex flex-1 flex-col items-center justify-center sm:px-8 px-4 pt-24">
         <div className="flex flex-col items-center justify-center pb-24">
-          <button
-            type="button"
-            className="text-7xl font-logo mb-1 hover:scale-105 cursor-pointer transition hover:opacity-50"
-            onClick={(e) => fireConfetti(e)}
-          >
-            Portfolio
-          </button>
+          <ConfettiTitle text="Portfolio" />
           <h2 className="text-xl font-semibold mt-4">Artwork by Andrew Yong</h2>
           <a
             href={`mailto:${CONTACT_EMAIL}`}
