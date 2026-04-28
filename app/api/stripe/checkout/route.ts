@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
           },
         },
       })),
-      success_url: `${req.nextUrl.origin}/store?success=1`,
+      success_url: `${req.nextUrl.origin}/store/success`,
       cancel_url: `${req.nextUrl.origin}/store`,
     });
 
