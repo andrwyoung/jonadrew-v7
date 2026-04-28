@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { LuShoppingBag } from "react-icons/lu";
 import { useCartStore, cartCount } from "@/store/cart-store";
 import { CartDrawer } from "@/components/store/cart-drawer";
+import { FaCartShopping } from "react-icons/fa6";
 
 const links = [
   { href: "/", label: "Portfolio" },
@@ -24,7 +24,7 @@ function CartIconButton() {
       className="relative text-text hover:text-secondary-text transition-colors cursor-pointer"
       aria-label="Open cart"
     >
-      <LuShoppingBag size={22} />
+      <FaCartShopping size={22} />
       {count > 0 && (
         <span className="absolute -top-1.5 -right-1.5 bg-secondary text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
           {count}

@@ -11,7 +11,7 @@ function ProductCard({ product }: { product: Product }) {
   return (
     <Link
       href={`/store/${product.slug}`}
-      className="group flex flex-col bg-white border border-stone-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow"
+      className="group flex flex-col bg-white border-2 border-stone-200 rounded-md overflow-hidden hover:shadow-md transition-shadow"
     >
       <div className="aspect-square bg-stone-100 overflow-hidden">
         <img
@@ -24,7 +24,7 @@ function ProductCard({ product }: { product: Product }) {
         <span className="text-xs uppercase tracking-wide text-stone-400 font-semibold">
           {product.category}
         </span>
-        <h2 className="font-header font-semibold text-text text-base leading-tight">
+        <h2 className="font-header font-semibold text-xl leading-tight">
           {product.name}
         </h2>
         <div className="flex items-center justify-between mt-2">

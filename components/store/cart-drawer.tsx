@@ -2,7 +2,13 @@
 
 import * as Dialog from "@radix-ui/react-dialog";
 import { useCartStore, cartTotal, cartCount } from "@/store/cart-store";
-import { LuX, LuMinus, LuPlus, LuShoppingBag } from "react-icons/lu";
+import {
+  FaCartShopping,
+  FaMinus,
+  FaPlus,
+  FaTrash,
+  FaXmark,
+} from "react-icons/fa6";
 
 function formatPrice(cents: number) {
   return `$${(cents / 100).toFixed(2)}`;
@@ -19,6 +25,7 @@ export function CartDrawer() {
         <Dialog.Overlay className="fixed inset-0 bg-black/30 z-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
 
         <Dialog.Content
+          aria-describedby={undefined}
           className="fixed right-0 top-0 h-full w-full max-w-sm bg-white shadow-xl z-200 flex flex-col
             data-[state=open]:animate-in data-[state=closed]:animate-out
             data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right
@@ -35,7 +42,7 @@ export function CartDrawer() {
                 className="text-stone-400 hover:text-text transition-colors cursor-pointer"
                 aria-label="Close cart"
               >
-                <LuX size={20} />
+                <FaXmark size={20} />
               </button>
             </Dialog.Close>
           </div>
@@ -44,7 +51,7 @@ export function CartDrawer() {
           <div className="flex-1 overflow-y-auto px-6 py-4 flex flex-col gap-4">
             {items.length === 0 ? (
               <div className="flex flex-col items-center justify-center flex-1 gap-3 text-stone-400 py-24">
-                <LuShoppingBag size={40} strokeWidth={1.5} />
+                <FaCartShopping size={40} />
                 <p className="font-header font-semibold">Your cart is empty</p>
               </div>
             ) : (
@@ -73,12 +80,12 @@ export function CartDrawer() {
                         onClick={() =>
                           updateQuantity(product.slug, quantity - 1)
                         }
-                        className="w-6 h-6 rounded border border-stone-200 flex items-center justify-center text-stone-500 hover:border-stone-400 transition-colors cursor-pointer"
+                        className="w-7 h-7 rounded border border-stone-200 flex items-center justify-center text-stone-500 hover:border-stone-400 transition-colors cursor-pointer"
                         aria-label="Decrease quantity"
                       >
-                        <LuMinus size={12} />
+                        <FaMinus size={16} />
                       </button>
-                      <span className="text-sm font-semibold w-4 text-center">
+                      <span className="font-semibold w-4 text-center">
                         {quantity}
                       </span>
                       <button
@@ -86,20 +93,21 @@ export function CartDrawer() {
                         onClick={() =>
                           updateQuantity(product.slug, quantity + 1)
                         }
-                        className="w-6 h-6 rounded border border-stone-200 flex items-center justify-center text-stone-500 hover:border-stone-400 transition-colors cursor-pointer"
+                        className="w-7 h-7 rounded border border-stone-200 flex items-center justify-center text-stone-500 hover:border-stone-400 transition-colors cursor-pointer"
                         aria-label="Increase quantity"
                       >
-                        <LuPlus size={12} />
+                        <FaPlus size={16} />
                       </button>
                     </div>
                   </div>
                   <button
                     type="button"
                     onClick={() => removeItem(product.slug)}
-                    className="text-stone-300 hover:text-red-400 transition-colors cursor-pointer shrink-0 mt-1"
+                    className="text-stone-400 hover:text-red-400 transition-colors cursor-pointer shrink-0 mt-1"
+                    title="Remove Item"
                     aria-label="Remove item"
                   >
-                    <LuX size={16} />
+                    <FaTrash size={16} />
                   </button>
                 </div>
               ))
