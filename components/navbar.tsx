@@ -10,8 +10,8 @@ import { FaCartShopping } from "react-icons/fa6";
 const links = [
   { href: "/", label: "Portfolio" },
   // { href: "/comics", label: "Comics" },
-  { href: "/store", label: "Store" },
   { href: "/about", label: "About" },
+  { href: "/store", label: "Store" },
 ];
 
 function CartIconButton() {

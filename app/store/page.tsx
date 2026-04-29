@@ -11,24 +11,24 @@ function ProductCard({ product }: { product: Product }) {
   return (
     <Link
       href={`/store/${product.slug}`}
-      className="group flex flex-col bg-white border-2 border-stone-200 rounded-md overflow-hidden hover:shadow-md transition-shadow"
+      className="group flex flex-col bg-white  rounded-md overflow-hidden "
     >
-      <div className="aspect-square bg-stone-100 overflow-hidden">
+      <div className="aspect-square rounded-md bg-stone-100 overflow-hidden">
         <img
           src={product.images[0]}
           alt={product.name}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
       </div>
-      <div className="p-4 flex flex-col gap-1">
+      <div className="p-4 flex flex-col gap-1 ">
         <span className="text-xs uppercase tracking-wide text-stone-400 font-semibold">
           {product.category}
         </span>
-        <h2 className="font-header font-semibold text-xl leading-tight">
+        <h2 className="font-header font-semibold text-xl group-hover:text-secondary-text leading-tight">
           {product.name}
         </h2>
-        <div className="flex items-center justify-between mt-2">
-          <span className="font-semibold text-secondary-text">
+        <div className="flex items-center justify-between ">
+          <span className="text-sm font-semibold text-secondary-text">
             {formatPrice(product.price)}
           </span>
         </div>

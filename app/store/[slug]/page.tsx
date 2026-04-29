@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { STORE_PRODUCTS } from "@/types/configs/store-config";
 import { AddToCartButton } from "@/components/store/add-to-cart-button";
+import { ProductImageZoom } from "@/components/store/product-image-zoom";
 
 function formatPrice(cents: number) {
   return `$${(cents / 100).toFixed(2)}`;
@@ -34,13 +35,10 @@ export default async function ProductPage({
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-4">
             {/* Image */}
-            <div className="bg-stone-100 rounded-lg overflow-hidden">
-              <img
-                src={product.images[product.images.length - 1]}
-                alt={product.name}
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <ProductImageZoom
+              src={product.images[product.images.length - 1]}
+              alt={product.name}
+            />
 
             {/* Details */}
             <div className="flex flex-col gap-4">
