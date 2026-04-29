@@ -1,7 +1,7 @@
 import { fetchSupabaseBlocks } from "@/lib/fetch-images";
 import { fetchSupabaseSections } from "@/lib/fetch-section";
 import { Block } from "@/types/block-types";
-import { PORTFOLIO_SECTIONS } from "@/types/portfolio-config";
+import { PORTFOLIO_SECTIONS } from "@/types/configs/portfolio-config";
 import { SectionData } from "@/types/section-types";
 import { useState, useEffect } from "react";
 
