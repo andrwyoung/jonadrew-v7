@@ -6,6 +6,8 @@ import { useEffect, useRef, useState } from "react";
 import { useCartStore, cartCount } from "@/store/cart-store";
 import { CartDrawer } from "@/components/store/cart-drawer";
 import { FaCartShopping } from "react-icons/fa6";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { IoClose } from "react-icons/io5";
 
 const links = [
   { href: "/", label: "Portfolio" },
@@ -38,6 +40,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [visible, setVisible] = useState(true);
   const [atTop, setAtTop] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
   const lastScrollY = useRef(0);
 
   useEffect(() => {
@@ -52,46 +55,86 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 w-full px-8 py-3 flex items-center justify-between z-150 transition-all duration-300 ${
+        className={`fixed top-0 left-0 w-full z-150 transition-all duration-300 ${
           visible ? "translate-y-0" : "-translate-y-full"
-        } ${atTop ? "" : "backdrop-blur-md bg-white/80"}`}
+        } ${atTop && !menuOpen ? "" : "backdrop-blur-md bg-white/80"}`}
       >
-        <div>
-          <Link
-            href="/"
-            className="text-3xl text-text hover:text-secondary-text font-logo transition"
-          >
-            Jonadrew
-          </Link>
-          {/* <h3 className="font-bold text-xs leading-4">Andrew Yong</h3> */}
+        <div className="px-8 py-3 flex items-center justify-between">
+          <div>
+            <Link
+              href="/"
+              className="text-3xl text-text hover:text-secondary-text font-logo transition"
+            >
+              Jonadrew
+            </Link>
+          </div>
+
+          {/* Desktop nav */}
+          <div className="hidden sm:flex items-center gap-6">
+            <ul className="flex gap-6">
+              {links.map(({ href, label }) => {
+                const active = pathname === href;
+                return (
+                  <li key={href}>
+                    <Link
+                      href={href}
+                      className={`text-md transition-colors font-header hover:text-secondary-text ${
+                        active
+                          ? "text-text font-bold underline"
+                          : "text-text font-semibold"
+                      }`}
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+            <CartIconButton />
+          </div>
+
+          {/* Mobile right side */}
+          <div className="flex sm:hidden items-center gap-4">
+            <CartIconButton />
+            <button
+              type="button"
+              onClick={() => setMenuOpen((o) => !o)}
+              className="text-text hover:text-secondary-text transition-colors cursor-pointer"
+              aria-label="Toggle menu"
+            >
+              {menuOpen ? <IoClose size={24} /> : <RxHamburgerMenu size={22} />}
+            </button>
+          </div>
         </div>
 
-        <div className="flex items-center gap-6">
-          <ul className="flex gap-6">
+        {/* Mobile dropdown */}
+        {menuOpen && (
+          <div className="sm:hidden border-t border-black/10 px-8 py-4 flex flex-col gap-4">
             {links.map(({ href, label }) => {
               const active = pathname === href;
               return (
-                <li key={href}>
-                  <Link
-                    href={href}
-                    className={`text-md transition-colors font-header hover:text-secondary-text ${
-                      active
-                        ? "text-text font-bold underline"
-                        : "text-text font-semibold"
-                    }`}
-                  >
-                    {label}
-                  </Link>
-                </li>
+                <Link
+                  key={href}
+                  href={href}
+                  className={`text-lg font-header hover:text-secondary-text transition-colors ${
+                    active
+                      ? "text-text font-bold underline"
+                      : "text-text font-semibold"
+                  }`}
+                >
+                  {label}
+                </Link>
               );
             })}
-          </ul>
-
-          <CartIconButton />
-        </div>
+          </div>
+        )}
       </nav>
       <CartDrawer />
     </>
