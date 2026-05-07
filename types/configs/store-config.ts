@@ -2,13 +2,22 @@ import type { Product } from "../store-types";
 
 export const STORE_PRODUCTS: Product[] = [
   {
-    slug: "zion-poster",
-    name: "Zion",
+    slug: "seattle-poster",
+    name: "Seattle",
     description:
-      "A hand painted illustration print of the Narrows in Zion National Park. 11x15 on 100lb matte cardstock.",
-    price: 2500,
-    category: "national park posters",
-    images: ["/store/zion-mockup.jpg", "/store/zion.webp"],
+      "A hand painted illustration print of Seattle Rain with the Space Needle. 11x14 on 100lb matte cardstock.",
+    price: 2200,
+    category: "cities posters",
+    images: ["/store/seattle-mockup.jpg", "/store/seattle.webp"],
+  },
+  {
+    slug: "sf-poster",
+    name: "San Francisco",
+    description:
+      "A hand painted illustration print of San Francisco Fog with the Golden Gate Bridge. 11x14 on 100lb matte cardstock.",
+    price: 2200,
+    category: "cities posters",
+    images: ["/store/sf-mockup.jpg", "/store/sf.webp"],
   },
   {
     slug: "yellowstone-poster",

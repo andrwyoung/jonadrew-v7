@@ -1,4 +1,8 @@
-export type Category = "national park posters" | "print" | "general";
+export type Category =
+  | "national park posters"
+  | "print"
+  | "general"
+  | "cities posters";
 
 export type Product = {
   slug: string;

@@ -55,10 +55,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
-
   return (
     <>
       <nav
@@ -123,6 +119,7 @@ export default function Navbar() {
                 <Link
                   key={href}
                   href={href}
+                  onClick={() => setMenuOpen(false)}
                   className={`text-lg font-header hover:text-secondary-text transition-colors ${
                     active
                       ? "text-text font-bold underline"
