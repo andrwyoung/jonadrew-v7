@@ -13,6 +13,7 @@ export type Product = {
   price: number; // in cents
   category: Category;
   unavailable?: boolean; // out of stock?
+  new?: boolean;
 
   images: string[]; // first image is the thumbnail
 };

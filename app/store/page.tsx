@@ -13,27 +13,37 @@ function ProductCard({ product }: { product: Product }) {
       href={`/store/${product.slug}`}
       className="group flex flex-col bg-white  rounded-md overflow-hidden "
     >
-      <div className="aspect-square rounded-md bg-stone-100 overflow-hidden">
+      <div className="relative aspect-square rounded-md bg-stone-100 overflow-hidden">
         <img
           src={product.images[0]}
           alt={product.name}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
+        {product.new && (
+          <span className="absolute top-4 left-4 font-header bg-white text-sm font-semibold tracking-wide px-4 py-1 rounded-lg shadow-sm">
+            New!
+          </span>
+        )}
       </div>
       <div className="p-4 flex flex-col gap-1 ">
         <span className="text-xs uppercase tracking-wide text-stone-400 font-semibold">
           {product.category}
         </span>
-        <h2 className="font-header font-semibold text-xl group-hover:text-secondary-text leading-tight">
+        <h2
+          className={`font-header font-semibold text-xl  
+          leading-tight ${product.unavailable ? "text-stone-400 group-hover:text-stone-400" : "group-hover:text-secondary-text"} `}
+        >
           {product.name}
         </h2>
-        <div className="flex items-center justify-between ">
-          <span className="text-sm font-semibold text-secondary-text">
-            {formatPrice(product.price)}
-          </span>
-        </div>
-        {product.unavailable && (
-          <span className="text-xs text-red-400 font-semibold">Sold out</span>
+
+        {product.unavailable ? (
+          <span className="text-sm text-red-400 font-semibold">Sold out</span>
+        ) : (
+          <div className="flex items-center justify-between ">
+            <span className="text-sm font-semibold text-secondary-text">
+              {formatPrice(product.price)}
+            </span>
+          </div>
         )}
       </div>
     </Link>

@@ -3,19 +3,27 @@
 import { useCartStore } from "@/store/cart-store";
 import type { Product } from "@/types/store-types";
 
-export function AddToCartButton({ product }: { product: Product }) {
+export function AddToCartButton({
+  product,
+  disabled,
+}: {
+  product: Product;
+  disabled: boolean;
+}) {
   const { addItem, openCart } = useCartStore();
 
   return (
     <button
       type="button"
-      className="bg-secondary text-white font-semibold px-8 py-2 rounded-lg hover:opacity-90 transition-opacity cursor-pointer"
+      className={` font-semibold px-8 py-2 rounded-lg 
+        ${disabled ? "cursor-not-allowed bg-stone-200 text-stone-400" : "cursor-pointer hover:opacity-90 transition-opacity bg-secondary text-white "}`}
       onClick={() => {
+        if (disabled) return;
         addItem(product);
         openCart();
       }}
     >
-      Add to Cart
+      {disabled ? "Sold Out" : "Add to Cart"}
     </button>
   );
 }

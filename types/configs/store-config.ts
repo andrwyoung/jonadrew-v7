@@ -9,6 +9,7 @@ export const STORE_PRODUCTS: Product[] = [
     price: 2200,
     category: "cities posters",
     images: ["/store/seattle-mockup.jpg", "/store/seattle.webp"],
+    new: true,
   },
   {
     slug: "sf-poster",
@@ -18,6 +19,8 @@ export const STORE_PRODUCTS: Product[] = [
     price: 2200,
     category: "cities posters",
     images: ["/store/sf-mockup.jpg", "/store/sf.webp"],
+    new: true,
+    unavailable: true,
   },
   {
     slug: "yellowstone-poster",

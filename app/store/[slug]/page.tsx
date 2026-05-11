@@ -55,12 +55,10 @@ export default async function ProductPage({
               </p>
 
               <div className="mt-4">
-                <AddToCartButton product={product} />
-                {product.unavailable && (
-                  <span className="inline-block bg-stone-200 text-stone-400 font-semibold px-8 py-3 rounded-lg">
-                    Sold Out
-                  </span>
-                )}
+                <AddToCartButton
+                  product={product}
+                  disabled={!!product.unavailable}
+                />
               </div>
             </div>
           </div>
