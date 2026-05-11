@@ -55,11 +55,11 @@ function ProductCard({ product }: { product: Product }) {
 export default function StorePage() {
   return (
     <div className="flex flex-col flex-1 bg-background text-text">
-      <main className="flex flex-1 flex-col items-center px-4 sm:px-8 pt-16 pb-24">
-        <div className="flex flex-col items-center pb-12">
+      <main className="flex flex-1 flex-col items-center  px-4 sm:px-8 pt-16 pb-24">
+        <div className="flex flex-col items-center pb-12 text-center">
           <ConfettiTitle text="Shop" />
           <h2 className="text-xl font-semibold mt-4">Prints and Posters</h2>
-          <p className="mt-1">
+          <p className="mt-1 px-2">
             Ships to US and Canada. Free shipping over{" "}
             {formatPrice(FREE_SHIPPING_THRESHOLD)}
           </p>
@@ -71,7 +71,7 @@ export default function StorePage() {
           ))}
         </div>
 
-        <div className="mt-24">
+        <div className="mt-24 text-center">
           <p className="font-medium">
             Questions? Contact me{" "}
             <a
