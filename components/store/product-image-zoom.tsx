@@ -4,45 +4,50 @@ import { useEffect, useState } from "react";
 import { FaXmark } from "react-icons/fa6";
 
 interface Props {
-  src: string;
+  srcs: string[];
   alt: string;
 }
 
-export function ProductImageZoom({ src, alt }: Props) {
-  const [open, setOpen] = useState(false);
+export function ProductImageZoom({ srcs, alt }: Props) {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   useEffect(() => {
-    if (!open) return;
+    if (openIndex === null) return;
     function onKey(e: KeyboardEvent) {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") setOpenIndex(null);
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [open]);
+  }, [openIndex]);
 
   return (
     <>
-      <div
-        className="bg-stone-100 rounded-lg overflow-hidden cursor-zoom-in"
-        onClick={() => setOpen(true)}
-      >
-        <img src={src} alt={alt} className="w-full h-full object-cover" />
+      <div className="flex flex-col gap-4">
+        {srcs.map((src, i) => (
+          <div
+            key={src}
+            className="bg-stone-100 rounded-lg overflow-hidden cursor-zoom-in"
+            onClick={() => setOpenIndex(i)}
+          >
+            <img src={src} alt={`${alt} ${i + 1}`} className="w-full h-full object-cover" />
+          </div>
+        ))}
       </div>
 
-      {open && (
+      {openIndex !== null && (
         <div
           className="fixed inset-0 z-200 flex items-center justify-center bg-stone-900/80"
-          onClick={() => setOpen(false)}
+          onClick={() => setOpenIndex(null)}
         >
           <img
-            src={src}
-            alt={alt}
+            src={srcs[openIndex]}
+            alt={`${alt} ${openIndex + 1}`}
             className="max-h-[90vh] max-w-[90vw] object-contain rounded-md"
             onClick={(e) => e.stopPropagation()}
           />
           <button
             className="absolute top-4 right-4 text-white text-2xl px-3 py-2 hover:bg-white/10 rounded cursor-pointer"
-            onClick={() => setOpen(false)}
+            onClick={() => setOpenIndex(null)}
           >
             <FaXmark />
           </button>

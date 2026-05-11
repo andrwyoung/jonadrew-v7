@@ -34,15 +34,17 @@ export default async function ProductPage({
           </Link>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-4">
-            {/* Image */}
-            <ProductImageZoom
-              src={product.images[product.images.length - 1]}
-              alt={product.name}
-            />
+            {/* Images */}
+            <div className="order-2 md:order-1">
+              <ProductImageZoom
+                srcs={product.images.slice(1)}
+                alt={product.name}
+              />
+            </div>
 
             {/* Details */}
-            <div className="flex flex-col gap-4">
-              <span className="text-xs uppercase tracking-wide text-stone-400 font-semibold">
+            <div className="flex flex-col gap-4 order-1 md:order-2">
+              <span className="hidden sm:block text-xs uppercase tracking-wide text-stone-400 font-semibold">
                 {product.category}
               </span>
               <h1 className="font-logo text-5xl text-text">{product.name}</h1>
