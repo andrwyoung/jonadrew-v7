@@ -3,6 +3,7 @@ import { STORE_PRODUCTS } from "@/types/configs/store-config";
 import type { Product } from "@/types/store-types";
 import ConfettiTitle from "@/components/confetti-title";
 import { FREE_SHIPPING_THRESHOLD } from "@/types/store-settings";
+import { CONTACT_EMAIL } from "@/types/settings";
 
 function formatPrice(cents: number) {
   return `$${(cents / 100).toFixed(2)}`;
@@ -58,7 +59,7 @@ export default function StorePage() {
         <div className="flex flex-col items-center pb-12">
           <ConfettiTitle text="Shop" />
           <h2 className="text-xl font-semibold mt-4">Prints and Posters</h2>
-          <p className="text-sm">
+          <p className="mt-1">
             Ships to US and Canada. Free shipping over{" "}
             {formatPrice(FREE_SHIPPING_THRESHOLD)}
           </p>
@@ -68,6 +69,18 @@ export default function StorePage() {
           {STORE_PRODUCTS.map((product) => (
             <ProductCard key={product.slug} product={product} />
           ))}
+        </div>
+
+        <div className="mt-24">
+          <p className="font-medium">
+            Questions? Contact me{" "}
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="text-secondary underline underline-offset-2"
+            >
+              {CONTACT_EMAIL}
+            </a>
+          </p>
         </div>
       </main>
     </div>

@@ -16,8 +16,8 @@ export default function StoreSuccessPage() {
     <div className="flex flex-col flex-1 bg-background text-text">
       <main className="flex flex-1 flex-col items-center justify-center px-4 sm:px-8 py-24 text-center gap-6">
         <h1 className="font-header text-4xl font-bold">Thank you!</h1>
-        <p className="text-lg text-stone-500 max-w-md">
-          Your order is confirmed. You&apos;ll hear from me soon — if you have
+        <p className="  max-w-md">
+          Your order is confirmed. You&apos;ll hear from me soon. If you have
           any questions, feel free to reach out at{" "}
           <a
             href={`mailto:${CONTACT_EMAIL}`}
@@ -25,11 +25,10 @@ export default function StoreSuccessPage() {
           >
             {CONTACT_EMAIL}
           </a>
-          .
         </p>
         <Link
           href="/store"
-          className="mt-4 bg-secondary text-white font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
+          className="mt-4 bg-secondary text-white font-semibold px-6 py-2 rounded-lg hover:opacity-90 transition-opacity"
         >
           Back to Store
         </Link>
