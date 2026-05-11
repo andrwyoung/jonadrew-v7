@@ -2,6 +2,7 @@ import Link from "next/link";
 import { STORE_PRODUCTS } from "@/types/configs/store-config";
 import type { Product } from "@/types/store-types";
 import ConfettiTitle from "@/components/confetti-title";
+import { FREE_SHIPPING_THRESHOLD } from "@/types/store-settings";
 
 function formatPrice(cents: number) {
   return `$${(cents / 100).toFixed(2)}`;
@@ -57,6 +58,10 @@ export default function StorePage() {
         <div className="flex flex-col items-center pb-12">
           <ConfettiTitle text="Shop" />
           <h2 className="text-xl font-semibold mt-4">Prints and Posters</h2>
+          <p className="text-sm">
+            Ships to US and Canada. Free shipping over{" "}
+            {formatPrice(FREE_SHIPPING_THRESHOLD)}
+          </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 w-full max-w-6xl">

@@ -1,4 +1,5 @@
 import { stripeClient } from "@/lib/stripe-client";
+import { FREE_SHIPPING_THRESHOLD } from "@/types/store-settings";
 import { NextRequest, NextResponse } from "next/server";
 
 type LineItem = {
@@ -15,6 +16,10 @@ export async function POST(req: NextRequest) {
   if (!items || items.length === 0) {
     return new NextResponse("Cart is empty", { status: 400 });
   }
+
+  const isFreeShipping =
+    items.reduce((sum, i) => sum + i.price * i.quantity, 0) >=
+    FREE_SHIPPING_THRESHOLD;
 
   try {
     const session = await stripeClient.checkout.sessions.create({
@@ -44,8 +49,10 @@ export async function POST(req: NextRequest) {
         {
           shipping_rate_data: {
             type: "fixed_amount",
-            fixed_amount: { amount: 500, currency: "usd" }, // $5
-            display_name: "Standard Shipping",
+            fixed_amount: { amount: isFreeShipping ? 0 : 500, currency: "usd" },
+            display_name: isFreeShipping
+              ? "Standard Shipping (Free)"
+              : "Standard Shipping",
             delivery_estimate: {
               minimum: { unit: "business_day", value: 5 },
               maximum: { unit: "business_day", value: 10 },
