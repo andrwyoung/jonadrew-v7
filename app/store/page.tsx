@@ -26,6 +26,10 @@ function ProductCard({ product }: { product: Product }) {
             New!
           </span>
         )}
+
+        <span className="absolute bottom-0 right-0 font-header rounded-tl-sm bg-white text-xs font-semibold tracking-wide px-2 py-1 shadow-sm">
+          {product.size}
+        </span>
       </div>
       <div className="p-4 flex flex-col gap-1 ">
         <span className="text-xs uppercase tracking-wide text-stone-400 font-semibold">

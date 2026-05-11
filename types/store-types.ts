@@ -9,6 +9,7 @@ export type Product = {
 
   name: string;
   description: string;
+  size: string;
 
   price: number; // in cents
   category: Category;
