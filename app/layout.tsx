@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     "Andrew Yong art",
     "Andrew Yong book covers",
     "Andrew Yong illustration",
+    "No AI art",
     "Jonadrew",
     "digital painting",
     "middle grade artist",
