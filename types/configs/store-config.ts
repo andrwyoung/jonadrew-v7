@@ -13,6 +13,7 @@ export const STORE_PRODUCTS: Product[] = [
       "/store/yellowstone-mockup.jpg",
       "/store/yellowstone.webp",
       "/store/yellowstone-pic.webp",
+      "/store/yellowstone-proof.webp",
     ],
   },
 
@@ -28,6 +29,7 @@ export const STORE_PRODUCTS: Product[] = [
       "/store/banff-mockup.jpg",
       "/store/banff.webp",
       "/store/banff-pic.webp",
+      "/store/banff-proof.webp",
     ],
   },
 
@@ -43,13 +45,14 @@ export const STORE_PRODUCTS: Product[] = [
       "/store/zion-mockup.jpg",
       "/store/zion.webp",
       "/store/zion-pic.webp",
+      "/store/zion-proof.webp",
     ],
   },
   {
     slug: "yosemite-poster",
     name: "Yosemite",
     description:
-      "A hand painted illustration print of Yosemite National Park. 11x15 on 100lb matte cardstock.",
+      "A hand painted illustration print of Yosemite Falls in Yosemite National Park. 11x15 on 100lb matte cardstock.",
     price: 2500,
     category: "national park posters",
     size: "11x15",
@@ -57,6 +60,7 @@ export const STORE_PRODUCTS: Product[] = [
       "/store/yosemite-mockup.jpg",
       "/store/yosemite.webp",
       "/store/yosemite-pic.webp",
+      "/store/yosemite-proof.webp",
     ],
   },
   {
@@ -71,6 +75,7 @@ export const STORE_PRODUCTS: Product[] = [
       "/store/antelope-mockup.jpg",
       "/store/antelope.webp",
       "/store/antelope-pic.webp",
+      "/store/antelope-proof.webp",
     ],
   },
 
