@@ -3,7 +3,7 @@ import type { Product } from "../store-types";
 export const STORE_PRODUCTS: Product[] = [
   {
     slug: "yellowstone-poster",
-    name: "Yellowstone",
+    name: "Yellowstone Poster",
     description:
       "A hand painted illustration print of Yellowstone National Park. 11x15 on 100lb matte cardstock.",
     price: 2500,
@@ -19,7 +19,7 @@ export const STORE_PRODUCTS: Product[] = [
 
   {
     slug: "banff-poster",
-    name: "Banff",
+    name: "Banff Poster",
     description:
       "A hand painted illustration print of Moraine Lake in Banff Canadian National Park. 11x15 on 100lb matte cardstock.",
     price: 2500,
@@ -35,7 +35,7 @@ export const STORE_PRODUCTS: Product[] = [
 
   {
     slug: "zion-poster",
-    name: "Zion",
+    name: "Zion Poster",
     description:
       "A hand painted illustration print of the Narrows in Zion National Park. 11x15 on 100lb matte cardstock.",
     price: 2500,
@@ -50,7 +50,7 @@ export const STORE_PRODUCTS: Product[] = [
   },
   {
     slug: "yosemite-poster",
-    name: "Yosemite",
+    name: "Yosemite Poster",
     description:
       "A hand painted illustration print of Yosemite Falls in Yosemite National Park. 11x15 on 100lb matte cardstock.",
     price: 2500,
@@ -82,7 +82,7 @@ export const STORE_PRODUCTS: Product[] = [
   // TRAVEL
   {
     slug: "seattle-poster",
-    name: "Seattle",
+    name: "Seattle Poster",
     description:
       "A hand painted illustration print of Seattle Rain with the Space Needle. 11x14 on 100lb matte cardstock.",
     price: 2200,
@@ -93,7 +93,7 @@ export const STORE_PRODUCTS: Product[] = [
   },
   {
     slug: "sf-poster",
-    name: "San Francisco",
+    name: "San Francisco Poster",
     description:
       "A hand painted illustration print of San Francisco Fog with the Golden Gate Bridge. 11x14 on 100lb matte cardstock.",
     price: 2200,
@@ -107,7 +107,7 @@ export const STORE_PRODUCTS: Product[] = [
   // PAINTINGS
   {
     slug: "tangerine-print",
-    name: "Tangerine Painting",
+    name: "Tangerine Print",
     description:
       "A hand painted still life of tangerines. 6x6 on 100lb matte cardstock.",
     price: 1500,
@@ -122,7 +122,7 @@ export const STORE_PRODUCTS: Product[] = [
 
   {
     slug: "daisy-print",
-    name: "Daisy Painting",
+    name: "Daisy Print",
     description:
       "A hand painted still life of a daisy. 6x6 on 100lb matte cardstock.",
     price: 1500,
@@ -136,7 +136,7 @@ export const STORE_PRODUCTS: Product[] = [
   },
   {
     slug: "honey-print",
-    name: "Honey Jar Painting",
+    name: "Honey Jar Print",
     description:
       "A hand painted still life of honey in a glass jar. 6x6 on 100lb matte cardstock.",
     price: 1500,
@@ -150,7 +150,7 @@ export const STORE_PRODUCTS: Product[] = [
   },
   {
     slug: "orange-print",
-    name: "Orange Painting",
+    name: "Orange Print",
     description:
       "A hand painted still life of orange slices. 6x6 on 100lb matte cardstock.",
     price: 1500,
@@ -165,7 +165,7 @@ export const STORE_PRODUCTS: Product[] = [
 
   {
     slug: "yolk-print",
-    name: "Yolk Painting",
+    name: "Yolk Print",
     description:
       "A hand painted still life of an egg yolk on chopsticks. 6x6 on 100lb matte cardstock.",
     price: 1500,
