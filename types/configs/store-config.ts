@@ -5,7 +5,7 @@ export const STORE_PRODUCTS: Product[] = [
     slug: "np-bundle",
     name: "Choose 3 - National Parks",
     description:
-      "Choose any 3 from our national park poster collection. Each are 11x15 on 100lb matte cardstock.",
+      "Choose any 3 national park posters. Each are 11x15 on 100lb matte cardstock.",
     price: 6000,
     category: "national park posters",
     size: "11x15",

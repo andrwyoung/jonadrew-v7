@@ -10,6 +10,7 @@ interface Props {
 
 export function ProductImageZoom({ srcs, alt }: Props) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [loaded, setLoaded] = useState<Set<number>>(new Set());
 
   useEffect(() => {
     if (openIndex === null) return;
@@ -26,10 +27,15 @@ export function ProductImageZoom({ srcs, alt }: Props) {
         {srcs.map((src, i) => (
           <div
             key={src}
-            className="bg-stone-100 rounded-lg overflow-hidden cursor-zoom-in"
+            className="bg-stone-200 rounded-lg overflow-hidden cursor-zoom-in min-h-48"
             onClick={() => setOpenIndex(i)}
           >
-            <img src={src} alt={`${alt} ${i + 1}`} className="w-full h-full object-cover" />
+            <img
+              src={src}
+              alt={`${alt} ${i + 1}`}
+              className={`w-full h-full object-cover transition-opacity duration-300 ${loaded.has(i) ? "opacity-100" : "opacity-0"}`}
+              onLoad={() => setLoaded((prev) => new Set(prev).add(i))}
+            />
           </div>
         ))}
       </div>
