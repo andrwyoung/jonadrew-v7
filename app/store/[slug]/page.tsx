@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { STORE_PRODUCTS } from "@/types/configs/store-config";
 import { AddToCartButton } from "@/components/store/add-to-cart-button";
+import { BundlePicker } from "@/components/store/bundle-picker";
 import { ProductImageZoom } from "@/components/store/product-image-zoom";
 
 function formatPrice(cents: number) {
@@ -57,10 +58,14 @@ export default async function ProductPage({
               </p>
 
               <div className="mt-4">
-                <AddToCartButton
-                  product={product}
-                  disabled={!!product.unavailable}
-                />
+                {product.bundleOptions ? (
+                  <BundlePicker product={product} />
+                ) : (
+                  <AddToCartButton
+                    product={product}
+                    disabled={!!product.unavailable}
+                  />
+                )}
               </div>
             </div>
           </div>

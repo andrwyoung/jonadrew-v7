@@ -17,4 +17,9 @@ export type Product = {
   new?: boolean;
 
   images: string[]; // first image is the thumbnail
+
+  bundleOptions?: {
+    picks: number;
+    options: string[]; // slugs of selectable products
+  };
 };

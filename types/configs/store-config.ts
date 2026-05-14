@@ -2,6 +2,27 @@ import type { Product } from "../store-types";
 
 export const STORE_PRODUCTS: Product[] = [
   {
+    slug: "np-bundle",
+    name: "Choose 3 - National Parks",
+    description:
+      "Choose any 3 from our national park poster collection. Each are 11x15 on 100lb matte cardstock.",
+    price: 6000,
+    category: "national park posters",
+    size: "11x15",
+    images: ["/store/bundle-mockup.jpg", "/store/bundle-mockup.jpg"],
+    bundleOptions: {
+      picks: 3,
+      options: [
+        "yellowstone-poster",
+        "banff-poster",
+        "zion-poster",
+        "yosemite-poster",
+        "antelope-poster",
+      ],
+    },
+  },
+
+  {
     slug: "yellowstone-poster",
     name: "Yellowstone Poster",
     description:

@@ -56,9 +56,9 @@ export function CartDrawer() {
                 <p className="font-header font-semibold">Your cart is empty</p>
               </div>
             ) : (
-              items.map(({ product, quantity }) => (
+              items.map(({ id, product, quantity, bundleSelections }) => (
                 <div
-                  key={product.slug}
+                  key={id}
                   className="flex gap-4 items-start border-b border-stone-100 pb-4"
                 >
                   <div className="w-16 h-16 rounded-lg bg-stone-100 overflow-hidden shrink-0">
@@ -72,15 +72,20 @@ export function CartDrawer() {
                     <p className="font-header font-semibold text-sm text-text truncate">
                       {product.name}
                     </p>
+                    {bundleSelections && bundleSelections.length > 0 && (
+                      <p className="text-xs text-stone-400">
+                        {bundleSelections
+                          .map((n) => n.replace(" Poster", ""))
+                          .join(", ")}
+                      </p>
+                    )}
                     <p className="text-sm text-secondary-text font-semibold">
                       {formatPrice(product.price)}
                     </p>
                     <div className="flex items-center gap-2 mt-1">
                       <button
                         type="button"
-                        onClick={() =>
-                          updateQuantity(product.slug, quantity - 1)
-                        }
+                        onClick={() => updateQuantity(id, quantity - 1)}
                         className="w-7 h-7 rounded border border-stone-200 flex items-center justify-center text-stone-500 hover:border-stone-400 transition-colors cursor-pointer"
                         aria-label="Decrease quantity"
                       >
@@ -91,9 +96,7 @@ export function CartDrawer() {
                       </span>
                       <button
                         type="button"
-                        onClick={() =>
-                          updateQuantity(product.slug, quantity + 1)
-                        }
+                        onClick={() => updateQuantity(id, quantity + 1)}
                         className="w-7 h-7 rounded border border-stone-200 flex items-center justify-center text-stone-500 hover:border-stone-400 transition-colors cursor-pointer"
                         aria-label="Increase quantity"
                       >
@@ -103,7 +106,7 @@ export function CartDrawer() {
                   </div>
                   <button
                     type="button"
-                    onClick={() => removeItem(product.slug)}
+                    onClick={() => removeItem(id)}
                     className="text-stone-400 hover:text-red-400 transition-colors cursor-pointer shrink-0 mt-1"
                     title="Remove Item"
                     aria-label="Remove item"

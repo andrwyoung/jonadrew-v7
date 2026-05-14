@@ -15,8 +15,10 @@ export function CheckoutButton() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          items: items.map(({ product, quantity }) => ({
-            name: product.name,
+          items: items.map(({ product, quantity, bundleSelections }) => ({
+            name: bundleSelections?.length
+              ? `${product.name}: ${bundleSelections.join(", ")}`
+              : product.name,
             price: product.price,
             quantity,
             image: product.images[0],
