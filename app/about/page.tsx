@@ -1,3 +1,4 @@
+import { FaqItem } from "@/components/about/faq-item";
 import { NewsletterForm } from "@/components/about/newsletter-form";
 import { ProfileImage } from "@/components/about/profile-image";
 import { CONTACT_EMAIL } from "@/types/settings";
@@ -14,10 +15,10 @@ export default function About() {
         <div className="mb-4">
           <ProfileImage />
         </div>
-
         <h1 className="text-4xl self-start font-bold">About</h1>
         <p className="text-base leading-relaxed mb-2">
-          Hi there! I&apos;m Andrew Yong, the person behind Jonadrew and the
+          Hi there! I&apos;m Andrew Yong, the person/artist behind Jonadrew
+          {/* and the
           creator of{" "}
           <a
             href="https://www.mudboard.com/"
@@ -27,24 +28,107 @@ export default function About() {
             className="font-semibold underline hover:text-secondary-text transition-colors"
           >
             Mudboard
-          </a>
+          </a> */}
           .
           <br />
           <br />
-          I started off working as a Software Engineer, but in 2022 I chose to
-          leave because I wanted to impact people&apos;s lives through art.
-          I&apos;ve since worked on dozens of book covers and hundreds of comic
-          pages. I&apos;ve also illustrated a handful of board games and (cool
-          fact) hiked the Pacific Crest Trail.
+          I started off working as a Software Engineer, but chose to leave in
+          2022 because I wanted to impact people&apos;s lives through art.
+          I&apos;ve since illustrated dozens of book covers and comic pages with
+          authors and publishers like Splickety and Descendant.
           <br />
           <br />
-          I like making approachable art, but what excites me most is using it
-          to also explore complex truths and tell stories that stick with you.
+          I want to use my art to tell stories that tell deep truths, and I
+          currently am working on a graphic novel outside of professional
+          freelance work.
+          <br />
+        </p>
+        {/* <h3 className="text-xl self-start font-bold mt-8">FAQ</h3> */}
+        <div className="w-full flex  flex-col gap-4 mt-8 mb-12">
+          <FaqItem question="On AI Usage">
+            My art has not been touched by AI.
+            <br />
+            <br />I spent the last decade putting in thousands of hours to hone
+            my skills, and I documented the whole journey! Just scroll all the
+            way back on my{" "}
+            <a
+              href="https://blog.jonadrew.com/profile"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="All old posts"
+              className="font-semibold underline hover:text-secondary-text transition-colors"
+            >
+              Newsletter
+            </a>{" "}
+            or{" "}
+            <a
+              href="https://www.instagram.com/jonadrew_/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Instagram"
+              className="font-semibold underline hover:text-secondary-text transition-colors"
+            >
+              Instagram
+            </a>{" "}
+            to see the progress and growth, and feel free to reach out if you
+            have questions.
+            <br />
+            <br />
+            For coding, I have no qualms using AI. To write, I&apos;ll have AI
+            proofread my emails if I&apos;m nervous, but for the most part I think
+            writing is fun and AI just sterilizes it.
+          </FaqItem>
+          <FaqItem question="Some other things I&apos;ve done">
+            I hiked the whole Pacific Crest Trail in 2024 using a backpack, tent
+            and sleeping bag that I{" "}
+            <a
+              href="https://jondrew.notion.site/Sewing-Gear-19b2e809fa4e801192f0c21c806f1605"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Sewing Gear"
+              className="font-semibold underline hover:text-secondary-text transition-colors"
+            >
+              made myself
+            </a>
+            ! I&apos;m pretty happy about it. <br />
+            <br />I also created{" "}
+            <a
+              href="https://www.mudboard.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Mudboard"
+              className="font-semibold underline hover:text-secondary-text transition-colors"
+            >
+              Mudboard
+            </a>
+            , a free reference organizer tool for artists.
+          </FaqItem>
+        </div>
+
+        <h2 className="text-3xl self-start font-bold mt-16">Contact</h2>
+        <p className="text-base leading-relaxed mb-2">
+          Reach me at{" "}
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="font-semibold underline hover:text-secondary-text transition-colors"
+          >
+            {CONTACT_EMAIL}
+          </a>
+          , or through{" "}
+          <a
+            href="https://www.instagram.com/jonadrew_/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Instagram"
+            className="font-semibold underline hover:text-secondary-text transition-colors"
+          >
+            Instagram
+          </a>
           <br />
           <br />
-          Every other Wednesday since September 2022, I send out a newsletter
-          sharing what I&apos;ve been making, what&apos;s been on my mind, and
-          then a couple photos from my camera roll that I find kinda funny.
+          Since September 2022, I send out a newsletter every other Wednesday
+          sharing what I&apos;ve been making, what&apos;s been on my mind, and a
+          couple photos from my camera roll that I find funny lol.
           <br />
           <br />
           Check out all my{" "}
@@ -60,27 +144,6 @@ export default function About() {
           or sign up here:
         </p>
         <NewsletterForm />
-
-        <h2 className="text-2xl font-bold mt-16">Contact</h2>
-        <p className="text-base leading-relaxed mb-2">
-          You can always reach me at{" "}
-          <a
-            href={`mailto:${CONTACT_EMAIL}`}
-            className="font-semibold underline hover:text-secondary-text transition-colors"
-          >
-            {CONTACT_EMAIL}
-          </a>
-          , and I&apos;m most active on{" "}
-          <a
-            href="https://www.instagram.com/jonadrew_/"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Instagram"
-            className="font-semibold underline hover:text-secondary-text transition-colors"
-          >
-            Instagram
-          </a>
-        </p>
       </main>
     </div>
   );
