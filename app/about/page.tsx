@@ -34,7 +34,7 @@ export default function About() {
           <br />
           I started off working as a Software Engineer, but chose to leave in
           2022 because I wanted to impact people&apos;s lives through art.
-          I&apos;ve since illustrated dozens of book covers and comic pages with
+          I&apos;ve since illustrated dozens of book covers + comic pages with
           authors and publishers like Splickety and Descendant.
           <br />
           <br />
@@ -48,9 +48,9 @@ export default function About() {
           <FaqItem question="On AI Usage">
             My art has not been touched by AI.
             <br />
-            <br />I spent the last decade putting in thousands of hours to hone
-            my skills, and I documented the whole journey! Just scroll all the
-            way back on my{" "}
+            <br />I spent the last decade putting in the work to hone my skills,
+            and even documented the whole journey. Just scroll all the way back
+            on my{" "}
             <a
               href="https://blog.jonadrew.com/profile"
               target="_blank"
@@ -70,15 +70,17 @@ export default function About() {
             >
               Instagram
             </a>{" "}
-            to see the progress and growth, and feel free to reach out if you
-            have questions.
+            to see the progress and growth.
             <br />
+            <br />
+            And definitely reach out if you have questions!
+            {/* <br />
             <br />
             For coding, I have no qualms using AI. To write, I&apos;ll have AI
-            proofread my emails if I&apos;m nervous, but for the most part I think
-            writing is fun and AI just sterilizes it.
+            proofread my emails if I&apos;m nervous, but for the most part I
+            think writing is fun and AI just sterilizes it. */}
           </FaqItem>
-          <FaqItem question="Some other things I&apos;ve done">
+          <FaqItem question="Some other things I've done">
             I hiked the whole Pacific Crest Trail in 2024 using a backpack, tent
             and sleeping bag that I{" "}
             <a
@@ -126,9 +128,10 @@ export default function About() {
           </a>
           <br />
           <br />
-          Since September 2022, I send out a newsletter every other Wednesday
-          sharing what I&apos;ve been making, what&apos;s been on my mind, and a
-          couple photos from my camera roll that I find funny lol.
+          If you want to learn more about what I&apos;m actually like, I send
+          out a newsletter every other Wednesday sharing what I&apos;ve been
+          making, what&apos;s been on my mind, and some photos from my camera
+          roll that I find funny lol.
           <br />
           <br />
           Check out all my{" "}
