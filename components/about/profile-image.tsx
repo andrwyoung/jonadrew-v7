@@ -1,35 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
-import { Blurhash } from "react-blurhash";
 
 export function ProfileImage() {
-  const [loaded, setLoaded] = useState(false);
-
   return (
-    <div className="relative w-[240px] h-[240px] rounded-full">
-      {!loaded && (
-        <div className="absolute inset-0 rounded-full overflow-hidden  ">
-          <Blurhash
-            hash={
-              "nlKL2Pt7SdoMjF_NoMx]RjM_S%RiRPxuozxut7V@RjtRs:ofR+fRjsRjRjRjt7of"
-            }
-            punch={1}
-            width="100%"
-            height="100%"
-            style={{ width: "100%", height: "100%", display: "block" }}
-          />
-        </div>
-      )}
+    <div className="relative w-[240px] h-[240px] rounded-full bg-stone-200">
       <Image
-        src="/face.jpeg"
+        src="/face2.jpg"
         alt="Andrew Yong"
-        width={240}
-        height={240}
-        className={`rounded-full object-cover w-[240px] h-[240px] transition-opacity duration-300 ${loaded ? "opacity-100" : "opacity-0"}`}
+        width={3024}
+        height={3024}
+        className={`rounded-full object-cover w-[240px] h-[240px] transition-opacity duration-300 `}
         loading="eager"
-        onLoad={() => setLoaded(true)}
       />
     </div>
   );
