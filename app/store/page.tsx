@@ -4,6 +4,11 @@ import type { Product } from "@/types/store-types";
 import ConfettiTitle from "@/components/confetti-title";
 import { FREE_SHIPPING_THRESHOLD } from "@/types/store-settings";
 import { CONTACT_EMAIL } from "@/types/settings";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Jonadrew - Store",
+};
 
 function formatPrice(cents: number) {
   return `$${(cents / 100).toFixed(2)}`;

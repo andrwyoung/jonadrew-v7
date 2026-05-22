@@ -7,7 +7,7 @@ import Footer from "@/components/my-footer";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
-  title: "Jonadrew - Andrew Yong Art",
+  title: "Jonadrew",
   description:
     "Art by Andrew Yong, a freelance illustrator for book covers and comics.",
 
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   creator: "Andrew Yong",
 
   openGraph: {
-    title: "Jonadrew - Andrew Yong Art",
+    title: "Jonadrew Art",
     description:
       "Art by Andrew Yong, a freelance illustrator for book covers and comics.",
     url: "https://jonadrew.com",

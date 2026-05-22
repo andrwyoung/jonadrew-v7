@@ -37,10 +37,18 @@ export default function About() {
           I&apos;ve since illustrated dozens of book covers + comic pages with
           authors and publishers like Splickety and Descendant.
           <br />
-          <br />
-          I want to use my art to tell stories that tell deep truths, and I
-          currently am working on a graphic novel outside of professional
-          freelance work.
+          <br />I want to use my art to tell stories that tell deep truths, and
+          I currently am working on a graphic novel outside of{" "}
+          <a
+            href="https://www.andrewyong.art/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Food and Travel illustrations"
+            className="font-semibold underline hover:text-secondary-text transition-colors"
+          >
+            professional freelance work
+          </a>
+          .
           <br />
         </p>
         {/* <h3 className="text-xl self-start font-bold mt-8">FAQ</h3> */}
