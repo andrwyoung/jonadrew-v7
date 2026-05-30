@@ -2,24 +2,18 @@ import type { Product } from "../store-types";
 
 export const STORE_PRODUCTS: Product[] = [
   {
-    slug: "np-bundle",
-    name: "Choose 3 - National Parks",
+    slug: "np-postcards",
+    name: "Prints 5 Pack",
     description:
-      "Choose any 3 national park posters. Each are 11x15 on 100lb matte cardstock.",
-    price: 6000,
-    category: "national park posters",
-    size: "11x15",
-    images: ["/store/bundle-mockup.jpg", "/store/bundle-mockup.jpg"],
-    bundleOptions: {
-      picks: 3,
-      options: [
-        "yellowstone-poster",
-        "banff-poster",
-        "zion-poster",
-        "yosemite-poster",
-        "antelope-poster",
-      ],
-    },
+      "Set of all 5 national park prints. Each are 5x7 on 100lb matte cardstock. Shipped together in a rigid mailer.",
+    price: 2500,
+    category: "national parks",
+    size: "5x7",
+    images: [
+      "/store/pack-mock2.webp",
+      "/store/pack-mock2.webp",
+      "/store/pack-mock.webp",
+    ],
   },
 
   {
@@ -28,10 +22,10 @@ export const STORE_PRODUCTS: Product[] = [
     description:
       "A hand painted illustration print of Yellowstone National Park. 11x15 on 100lb matte cardstock.",
     price: 2500,
-    category: "national park posters",
+    category: "national parks",
     size: "11x15",
     images: [
-      "/store/yellowstone-mockup.jpg",
+      "/store/yellowstone-wall.webp",
       "/store/yellowstone-wall.webp",
       "/store/yellowstone-pic.webp",
       "/store/yellowstone.webp",
@@ -45,10 +39,10 @@ export const STORE_PRODUCTS: Product[] = [
     description:
       "A hand painted illustration print of Moraine Lake in Banff Canadian National Park. 11x15 on 100lb matte cardstock.",
     price: 2500,
-    category: "national park posters",
+    category: "national parks",
     size: "11x15",
     images: [
-      "/store/banff-mockup.jpg",
+      "/store/banff-wall.webp",
       "/store/banff-wall.webp",
       "/store/banff-pic.webp",
       "/store/banff.webp",
@@ -62,10 +56,10 @@ export const STORE_PRODUCTS: Product[] = [
     description:
       "A hand painted illustration print of the Narrows in Zion National Park. 11x15 on 100lb matte cardstock.",
     price: 2500,
-    category: "national park posters",
+    category: "national parks",
     size: "11x15",
     images: [
-      "/store/zion-mockup.jpg",
+      "/store/zion-wall.webp",
       "/store/zion-wall.webp",
       "/store/zion-pic.webp",
       "/store/zion.webp",
@@ -78,10 +72,10 @@ export const STORE_PRODUCTS: Product[] = [
     description:
       "A hand painted illustration print of Yosemite Falls in Yosemite National Park. 11x15 on 100lb matte cardstock.",
     price: 2500,
-    category: "national park posters",
+    category: "national parks",
     size: "11x15",
     images: [
-      "/store/yosemite-mockup.jpg",
+      "/store/yosemite-wall.webp",
       "/store/yosemite-wall.webp",
       "/store/yosemite-pic.webp",
       "/store/yosemite.webp",
@@ -94,15 +88,35 @@ export const STORE_PRODUCTS: Product[] = [
     description:
       "A hand painted illustration print of Antelope Canyon Park at night. 11x15 on 100lb matte cardstock.",
     price: 2500,
-    category: "national park posters",
+    category: "national parks",
     size: "11x15",
     images: [
-      "/store/antelope-mockup.jpg",
+      "/store/antelope-wall.webp",
       "/store/antelope-wall.webp",
       "/store/antelope-pic.webp",
       "/store/antelope.webp",
       "/store/antelope-proof.webp",
     ],
+  },
+  {
+    slug: "np-bundle",
+    name: "Choose 3 National Park Posters",
+    description:
+      "Choose any 3 national park posters. Each are 11x15 on 100lb matte cardstock.",
+    price: 6000,
+    category: "national parks",
+    size: "11x15",
+    images: ["/store/bundle-mockup.jpg", "/store/bundle-mockup.jpg"],
+    bundleOptions: {
+      picks: 3,
+      options: [
+        "yellowstone-poster",
+        "banff-poster",
+        "zion-poster",
+        "yosemite-poster",
+        "antelope-poster",
+      ],
+    },
   },
 
   // TRAVEL
@@ -140,7 +154,7 @@ export const STORE_PRODUCTS: Product[] = [
     category: "print",
     size: "6x6",
     images: [
-      "/store/prints-mockup.webp",
+      "/store/prints-floor.webp",
       "/store/prints-mockup.webp",
       "/store/prints-floor.webp",
       "/store/prints-dragon.webp",

@@ -1,5 +1,5 @@
 export type Category =
-  | "national park posters"
+  | "national parks"
   | "print"
   | "general"
   | "cities posters";

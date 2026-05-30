@@ -1,6 +1,5 @@
 import ConfettiTitle from "@/components/confetti-title";
 import Portfolio from "@/components/homepage/portfolio";
-import { CONTACT_EMAIL } from "@/types/settings";
 
 export default function Home() {
   return (
@@ -24,7 +23,7 @@ export default function Home() {
             title={"Food Illustration Portfolio"}
             className="font-header text-stone-400 font-semibold mt-2 underline text-sm hover:text-secondary-text transition-colors"
           >
-            Looking for Food/Travel portfolio? →
+            Portfolio moving here soon →
           </a>
 
           {/* <p className="mt-4 max-w-md text-center text-base leading-relaxed">
