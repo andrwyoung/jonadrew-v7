@@ -128,8 +128,11 @@ export const STORE_PRODUCTS: Product[] = [
     price: 2200,
     category: "cities posters",
     size: "11x14",
-    images: ["/store/seattle-mockup.jpg", "/store/seattle.webp"],
-    new: true,
+    images: [
+      "/store/seattle-mockup.jpg",
+      "/store/seattle.webp",
+      "/store/seattle-framed.webp",
+    ],
   },
   {
     slug: "sf-poster",
@@ -139,9 +142,7 @@ export const STORE_PRODUCTS: Product[] = [
     price: 2200,
     category: "cities posters",
     size: "11x14",
-    images: ["/store/sf-mockup.jpg", "/store/sf.webp"],
-    new: true,
-    unavailable: true,
+    images: ["/store/sf-mockup.jpg", "/store/sf.webp", "/store/sf-framed.webp"],
   },
 
   // PAINTINGS
