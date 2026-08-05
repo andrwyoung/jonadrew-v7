@@ -7,8 +7,8 @@ export default function Home() {
       <main className="flex flex-1 flex-col items-center justify-center sm:px-8 px-4 pt-24">
         <div className="flex flex-col items-center text-center justify-center pb-24">
           <ConfettiTitle text="Portfolio" />
-          <h2 className="text-xl md:text-2xl font-semibold mt-4">
-            Illustrations by Andrew Yong
+          <h2 className="text-lg font-semibold mt-4">
+            Fantasy Book Covers and Comics by Andrew Yong
           </h2>
           {/* <a
             href={`mailto:${CONTACT_EMAIL}`}
@@ -23,7 +23,7 @@ export default function Home() {
             title={"Food Illustration Portfolio"}
             className="font-header text-stone-400 font-semibold mt-2 underline text-sm hover:text-secondary-text transition-colors"
           >
-            Portfolio moving here soon →
+            Editoral portfolio on different site →
           </a>
 
           {/* <p className="mt-4 max-w-md text-center text-base leading-relaxed">
