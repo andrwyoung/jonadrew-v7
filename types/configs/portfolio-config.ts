@@ -14,13 +14,13 @@ export const PORTFOLIO_SECTIONS: PortfolioConfig[] = [
     id: "5ac96ecb-d903-4134-8d7f-680deda9fe52",
     title: "Interior Illustrations",
   },
+
+  {
+    id: "6f6b7d4d-12a0-4f20-b071-99e4b1edca06",
+    title: "Board Games",
+  },
   {
     id: "d5bd98b6-3f87-4f0e-8465-348d79572393",
     title: "Comics",
   },
-
-  // {
-  //   id: "c0ae54c9-a48a-4165-9c56-539b131160b4",
-  //   title: "Board Games",
-  // },
 ];
