@@ -75,8 +75,9 @@ export default function Commission() {
                 canceling, you&apos;re refunded in full within 14 days.
               </li>
               <li>
-                Once paid in full, you get a worldwide, non-exclusive license to
-                use it for all personal and commercial purposes.
+                Once paid in full, you're free to use the final artwork for all
+                personal and commercial purposes worldwide (full details in
+                contract).
               </li>
             </ol>
             <a
@@ -97,8 +98,9 @@ export default function Commission() {
           <ProcessStep index={3} title="Sketch + Rendering">
             <p className="text-base leading-relaxed mb-2">
               I&apos;ll share a rough sketch to nail down composition and
-              layout, and we can do a round of revisions to make sure we&apos;re
-              on the same page. This is the best stage for big changes.
+              layout, and we can do a round of revisions to make sure it&apos;s
+              what you&apos;re envisioning. This is the best stage for big
+              changes.
             </p>
             <p className="text-base leading-relaxed">
               After the sketches are approved, I move on to render and finish
@@ -109,8 +111,8 @@ export default function Commission() {
 
           <ProcessStep index={4} title="Revisions">
             <p className="text-base leading-relaxed">
-              Once I feel like the piece is in a good place, I want to make sure
-              we&apos;re on the same page. We can do up to 2 rounds of small
+              Once I feel like the piece is in a good place, I want to check in
+              with you before calling it done. We can do up to 2 rounds of small
               revisions to make sure it&apos;s aligned with your vision (full
               details in contract).
             </p>
