@@ -12,6 +12,7 @@ import { IoClose } from "react-icons/io5";
 const links = [
   { href: "/", label: "Portfolio" },
   // { href: "/comics", label: "Comics" },
+  { href: "/commission", label: "Commissions" },
   { href: "/about", label: "About" },
   { href: "/store", label: "Store" },
 ];

@@ -13,7 +13,7 @@ export function FaqItem({
           ▾
         </span>
       </summary>
-      <p className="text-base leading-relaxed pt-3">{children}</p>
+      <div className="text-base leading-relaxed pt-3 pb-4">{children}</div>
     </details>
   );
 }

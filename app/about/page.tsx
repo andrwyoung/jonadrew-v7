@@ -3,6 +3,7 @@ import { NewsletterForm } from "@/components/about/newsletter-form";
 import { ProfileImage } from "@/components/about/profile-image";
 import { CONTACT_EMAIL } from "@/types/settings";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Jonadrew - About",
@@ -78,17 +79,27 @@ export default function About() {
             >
               Instagram
             </a>{" "}
-            to see the progress and growth.
-            <br />
-            <br />
-            And definitely reach out if you have questions!
+            to see the progress and growth. And definitely reach out with any
+            questions!
             {/* <br />
             <br />
             For coding, I have no qualms using AI. To write, I&apos;ll have AI
             proofread my emails if I&apos;m nervous, but for the most part I
             think writing is fun and AI just sterilizes it. */}
           </FaqItem>
-          <FaqItem question="Some other things I've done">
+
+          {/* <FaqItem question="Commisioning Me">
+            Feel free to reach out! Check out{" "}
+            <Link
+              href="/commission"
+              title="Commissions"
+              className="font-semibold underline hover:text-secondary-text transition-colors"
+            >
+              this page
+            </Link>{" "}
+            for details what the commission process is like.
+          </FaqItem> */}
+          <FaqItem question="Other things I've done">
             I hiked the whole Pacific Crest Trail in 2024 using a backpack, tent
             and sleeping bag that I{" "}
             <a
