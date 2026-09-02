@@ -1,6 +1,6 @@
 import { FaqItem } from "@/components/about/faq-item";
 import { ProcessStep } from "@/components/commission/process-step";
-import { CONTACT_EMAIL } from "@/types/settings";
+import { CONTACT_EMAIL, INTAKE_FORM } from "@/types/settings";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -52,8 +52,21 @@ export default function Commission() {
           <ProcessStep index={1} title="Discovery">
             <p className="text-base leading-relaxed mb-2">
               I want to learn about your project! Tell me about what excites
-              you, and talk about what you&apos;re imagining. Any images,
-              references or written material would be especially helpful.
+              you, and talk about what you&apos;re imagining.
+            </p>
+            <p className="text-base leading-relaxed mb-2">
+              Any images, references or written material would be especially
+              helpful. If doing a book cover, I might ask you to fill out{" "}
+              <a
+                href={INTAKE_FORM}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Instagram"
+                className="font-semibold underline hover:text-secondary-text transition-colors"
+              >
+                this form
+              </a>
+              .
             </p>
             <p className="text-base leading-relaxed">
               This is also where I&apos;ll give you a project time estimate and
