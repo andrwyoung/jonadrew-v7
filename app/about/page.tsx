@@ -88,7 +88,7 @@ export default function About() {
             think writing is fun and AI just sterilizes it. */}
           </FaqItem>
 
-          {/* <FaqItem question="Commisioning Me">
+          <FaqItem question="Commisioning Me">
             Feel free to reach out! Check out{" "}
             <Link
               href="/commission"
@@ -98,7 +98,7 @@ export default function About() {
               this page
             </Link>{" "}
             for details what the commission process is like.
-          </FaqItem> */}
+          </FaqItem>
           <FaqItem question="Other things I've done">
             I hiked the whole Pacific Crest Trail in 2024 using a backpack, tent
             and sleeping bag that I{" "}
