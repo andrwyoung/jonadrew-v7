@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import { useCartStore } from "@/store/cart-store";
-import { CONTACT_EMAIL } from "@/types/settings";
+import { CONTACT_EMAIL, NEWSLETTER_LINK } from "@/types/settings";
 
 export default function StoreSuccessPage() {
   const clearCart = useCartStore((s) => s.clearCart);
@@ -28,7 +28,7 @@ export default function StoreSuccessPage() {
           Also...since you bought something, you might be the type of person
           interested in my{" "}
           <a
-            href={`https://blog.jonadrew.com/profile`}
+            href={NEWSLETTER_LINK}
             target="_blank"
             rel="noopener noreferrer"
             title="Blog previous posts"

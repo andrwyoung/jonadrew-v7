@@ -1,4 +1,5 @@
 export const CONTACT_EMAIL = "andrew@jonadrew.com";
+export const NEWSLETTER_LINK = "https://blog.andrewyong.art/";
 export const IMAGE_SIZE = "full";
 
 export const SUPABASE_OBJECT_URL = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/mudboard-photos`;

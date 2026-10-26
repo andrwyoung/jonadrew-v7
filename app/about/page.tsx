@@ -1,7 +1,7 @@
 import { FaqItem } from "@/components/about/faq-item";
 import { NewsletterForm } from "@/components/about/newsletter-form";
 import { ProfileImage } from "@/components/about/profile-image";
-import { CONTACT_EMAIL } from "@/types/settings";
+import { CONTACT_EMAIL, NEWSLETTER_LINK } from "@/types/settings";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -61,7 +61,7 @@ export default function About() {
             and even documented the whole journey. Just scroll all the way back
             on my{" "}
             <a
-              href="https://blog.jonadrew.com/profile"
+              href={NEWSLETTER_LINK}
               target="_blank"
               rel="noopener noreferrer"
               title="All old posts"
@@ -155,7 +155,7 @@ export default function About() {
           <br />
           Check out all my{" "}
           <a
-            href="https://blog.jonadrew.com/profile"
+            href={NEWSLETTER_LINK}
             target="_blank"
             rel="noopener noreferrer"
             title="All old posts"
