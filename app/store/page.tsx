@@ -68,9 +68,11 @@ export default function StorePage() {
         <div className="flex flex-col items-center pb-12 text-center">
           <ConfettiTitle text="Shop" />
           <h2 className="text-xl font-semibold mt-4">Prints and Posters</h2>
-          <p className="mt-1 px-2">
+          <p className="mt-1 px-2 text-sm text-stone-500">
             Ships to US and Canada. Free shipping over{" "}
             {formatPrice(FREE_SHIPPING_THRESHOLD)}
+            <br />
+            All prices include applicable sales tax.
           </p>
         </div>
 
